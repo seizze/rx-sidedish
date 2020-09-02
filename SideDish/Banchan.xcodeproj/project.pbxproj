@@ -1,0 +1,654 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C22EE1F22451700B0046E27B /* BanchanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22EE1F12451700B0046E27B /* BanchanTests.swift */; };
+		C2764D9824581C7E00E9018A /* DefaultLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D9724581C7E00E9018A /* DefaultLocation.swift */; };
+		C2764D9A2458597400E9018A /* BanchanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D992458597400E9018A /* BanchanViewController.swift */; };
+		C2764D9C2458599700E9018A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D9B2458599700E9018A /* DetailViewController.swift */; };
+		C2764D9E245899CB00E9018A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D9D245899CB00E9018A /* Line.swift */; };
+		C2764DA02458AED300E9018A /* ImageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D9F2458AED300E9018A /* ImageCollectionView.swift */; };
+		C2764DA22458AFAE00E9018A /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764DA12458AFAE00E9018A /* DescriptionView.swift */; };
+		C2764DA42458B1A900E9018A /* BanchanDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764DA32458B1A900E9018A /* BanchanDetailResponse.swift */; };
+		C2764DA62458B2D300E9018A /* BanchanDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764DA52458B2D300E9018A /* BanchanDetail.swift */; };
+		C2764DA82458B37B00E9018A /* BanchanDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764DA72458B37B00E9018A /* BanchanDetailUseCase.swift */; };
+		C2764DAA2458B38400E9018A /* ImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764DA92458B38400E9018A /* ImageUseCase.swift */; };
+		C2764DAC2458BDFA00E9018A /* BanchanDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764DAB2458BDFA00E9018A /* BanchanDetailViewModel.swift */; };
+		C2764DAE2458C64200E9018A /* ImageCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764DAD2458C64200E9018A /* ImageCollectionViewModel.swift */; };
+		C28003A8245012A4005D739E /* BanchanResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003A7245012A4005D739E /* BanchanResponse.swift */; };
+		C28003AB245017DB005D739E /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003AA245017DB005D739E /* Endpoints.swift */; };
+		C28003AD245018AA005D739E /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003AC245018AA005D739E /* APIBuilder.swift */; };
+		C28003AF245018CA005D739E /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003AE245018CA005D739E /* APIRouter.swift */; };
+		C28003B1245020EF005D739E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003B0245020EF005D739E /* NetworkManager.swift */; };
+		C28003B524503251005D739E /* BanchanUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003B424503251005D739E /* BanchanUseCase.swift */; };
+		C2969997244E956200CE191F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2969996244E956200CE191F /* AppDelegate.swift */; };
+		C2969999244E956200CE191F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2969998244E956200CE191F /* SceneDelegate.swift */; };
+		C296999E244E956200CE191F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C296999C244E956200CE191F /* Main.storyboard */; };
+		C29699A0244E956600CE191F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C296999F244E956600CE191F /* Assets.xcassets */; };
+		C29699A3244E956600CE191F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29699A1244E956600CE191F /* LaunchScreen.storyboard */; };
+		C2BBA54C24517C1300E76F08 /* Banchan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BBA54B24517C1300E76F08 /* Banchan.swift */; };
+		C2BBA55024517DB400E76F08 /* CategorizedBanchanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BBA54F24517DB400E76F08 /* CategorizedBanchanViewModel.swift */; };
+		C2BBA5522451844B00E76F08 /* ViewModelBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BBA5512451844B00E76F08 /* ViewModelBinding.swift */; };
+		C2CD5E76244EB6D5000C41B8 /* BorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CD5E75244EB6D5000C41B8 /* BorderedLabel.swift */; };
+		C2CD5E78244EC65A000C41B8 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CD5E77244EC65A000C41B8 /* RoundImageView.swift */; };
+		C2D8E0FF244F301100F4031F /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8E0FE244F301100F4031F /* BadgeView.swift */; };
+		C2D8E103244F35EE00F4031F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8E102244F35EE00F4031F /* UIColorExtension.swift */; };
+		C2D8E105244F38A000F4031F /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8E104244F38A000F4031F /* BadgeLabel.swift */; };
+		C2D8E10F244F42EC00F4031F /* BanchanHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D8E10E244F42EC00F4031F /* BanchanHeaderView.xib */; };
+		C2E88278244EE65800E2CECA /* BanchanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88277244EE65800E2CECA /* BanchanCell.swift */; };
+		C2E8827A244EE82F00E2CECA /* BanchanHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88279244EE82F00E2CECA /* BanchanHeaderView.swift */; };
+		C2E88283244F05B600E2CECA /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88282244F05B600E2CECA /* ReusableView.swift */; };
+		C2E88286244F06D900E2CECA /* BanchanDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88285244F06D900E2CECA /* BanchanDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C22EE1F42451700B0046E27B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C296998B244E956200CE191F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2969992244E956200CE191F;
+			remoteInfo = Banchan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C22EE1EF2451700B0046E27B /* BanchanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BanchanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C22EE1F12451700B0046E27B /* BanchanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanTests.swift; sourceTree = "<group>"; };
+		C22EE1F32451700B0046E27B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2764D9724581C7E00E9018A /* DefaultLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocation.swift; sourceTree = "<group>"; };
+		C2764D992458597400E9018A /* BanchanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BanchanViewController.swift; sourceTree = "<group>"; };
+		C2764D9B2458599700E9018A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C2764D9D245899CB00E9018A /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		C2764D9F2458AED300E9018A /* ImageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionView.swift; sourceTree = "<group>"; };
+		C2764DA12458AFAE00E9018A /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		C2764DA32458B1A900E9018A /* BanchanDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanDetailResponse.swift; sourceTree = "<group>"; };
+		C2764DA52458B2D300E9018A /* BanchanDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanDetail.swift; sourceTree = "<group>"; };
+		C2764DA72458B37B00E9018A /* BanchanDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanDetailUseCase.swift; sourceTree = "<group>"; };
+		C2764DA92458B38400E9018A /* ImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUseCase.swift; sourceTree = "<group>"; };
+		C2764DAB2458BDFA00E9018A /* BanchanDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanDetailViewModel.swift; sourceTree = "<group>"; };
+		C2764DAD2458C64200E9018A /* ImageCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewModel.swift; sourceTree = "<group>"; };
+		C28003A7245012A4005D739E /* BanchanResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanResponse.swift; sourceTree = "<group>"; };
+		C28003AA245017DB005D739E /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		C28003AC245018AA005D739E /* APIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
+		C28003AE245018CA005D739E /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		C28003B0245020EF005D739E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C28003B424503251005D739E /* BanchanUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanUseCase.swift; sourceTree = "<group>"; };
+		C2969993244E956200CE191F /* Banchan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Banchan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2969996244E956200CE191F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C2969998244E956200CE191F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C296999D244E956200CE191F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C296999F244E956600CE191F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C29699A2244E956600CE191F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C29699A4244E956600CE191F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2BBA54B24517C1300E76F08 /* Banchan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchan.swift; sourceTree = "<group>"; };
+		C2BBA54F24517DB400E76F08 /* CategorizedBanchanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorizedBanchanViewModel.swift; sourceTree = "<group>"; };
+		C2BBA5512451844B00E76F08 /* ViewModelBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBinding.swift; sourceTree = "<group>"; };
+		C2CD5E75244EB6D5000C41B8 /* BorderedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedLabel.swift; sourceTree = "<group>"; };
+		C2CD5E77244EC65A000C41B8 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		C2D8E0FE244F301100F4031F /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		C2D8E102244F35EE00F4031F /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		C2D8E104244F38A000F4031F /* BadgeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
+		C2D8E10E244F42EC00F4031F /* BanchanHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BanchanHeaderView.xib; sourceTree = "<group>"; };
+		C2E88277244EE65800E2CECA /* BanchanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanCell.swift; sourceTree = "<group>"; };
+		C2E88279244EE82F00E2CECA /* BanchanHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanHeaderView.swift; sourceTree = "<group>"; };
+		C2E88282244F05B600E2CECA /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		C2E88285244F06D900E2CECA /* BanchanDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C22EE1EC2451700B0046E27B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2969990244E956200CE191F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C22EE1F02451700B0046E27B /* BanchanTests */ = {
+			isa = PBXGroup;
+			children = (
+				C22EE1F12451700B0046E27B /* BanchanTests.swift */,
+				C22EE1F32451700B0046E27B /* Info.plist */,
+			);
+			path = BanchanTests;
+			sourceTree = "<group>";
+		};
+		C28003A52450124A005D739E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C2BBA54B24517C1300E76F08 /* Banchan.swift */,
+				C28003A7245012A4005D739E /* BanchanResponse.swift */,
+				C2764DA52458B2D300E9018A /* BanchanDetail.swift */,
+				C2764DA32458B1A900E9018A /* BanchanDetailResponse.swift */,
+				C2764D9724581C7E00E9018A /* DefaultLocation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C28003A62450125C005D739E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2764D992458597400E9018A /* BanchanViewController.swift */,
+				C2764D9B2458599700E9018A /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C28003A9245017C4005D739E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C28003AA245017DB005D739E /* Endpoints.swift */,
+				C28003AC245018AA005D739E /* APIBuilder.swift */,
+				C28003AE245018CA005D739E /* APIRouter.swift */,
+				C28003B0245020EF005D739E /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C28003B32450323D005D739E /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C28003B424503251005D739E /* BanchanUseCase.swift */,
+				C2764DA72458B37B00E9018A /* BanchanDetailUseCase.swift */,
+				C2764DA92458B38400E9018A /* ImageUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		C296998A244E956200CE191F = {
+			isa = PBXGroup;
+			children = (
+				C2969995244E956200CE191F /* Banchan */,
+				C22EE1F02451700B0046E27B /* BanchanTests */,
+				C2969994244E956200CE191F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C2969994244E956200CE191F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2969993244E956200CE191F /* Banchan.app */,
+				C22EE1EF2451700B0046E27B /* BanchanTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2969995244E956200CE191F /* Banchan */ = {
+			isa = PBXGroup;
+			children = (
+				C2E8827F244F006400E2CECA /* Utils */,
+				C2CD5E74244EB68C000C41B8 /* Views */,
+				C2BBA5482451786E00E76F08 /* ViewModels */,
+				C2E88284244F06BE00E2CECA /* Delegates */,
+				C28003A62450125C005D739E /* Controllers */,
+				C28003B32450323D005D739E /* UseCases */,
+				C28003A52450124A005D739E /* Models */,
+				C28003A9245017C4005D739E /* Networking */,
+				C2969996244E956200CE191F /* AppDelegate.swift */,
+				C2969998244E956200CE191F /* SceneDelegate.swift */,
+				C296999C244E956200CE191F /* Main.storyboard */,
+				C296999F244E956600CE191F /* Assets.xcassets */,
+				C29699A1244E956600CE191F /* LaunchScreen.storyboard */,
+				C29699A4244E956600CE191F /* Info.plist */,
+			);
+			path = Banchan;
+			sourceTree = "<group>";
+		};
+		C2BBA5482451786E00E76F08 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C2BBA5512451844B00E76F08 /* ViewModelBinding.swift */,
+				C2BBA54F24517DB400E76F08 /* CategorizedBanchanViewModel.swift */,
+				C2764DAB2458BDFA00E9018A /* BanchanDetailViewModel.swift */,
+				C2764DAD2458C64200E9018A /* ImageCollectionViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C2CD5E74244EB68C000C41B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2D8E104244F38A000F4031F /* BadgeLabel.swift */,
+				C2CD5E75244EB6D5000C41B8 /* BorderedLabel.swift */,
+				C2CD5E77244EC65A000C41B8 /* RoundImageView.swift */,
+				C2E88277244EE65800E2CECA /* BanchanCell.swift */,
+				C2E88279244EE82F00E2CECA /* BanchanHeaderView.swift */,
+				C2D8E0FE244F301100F4031F /* BadgeView.swift */,
+				C2D8E10E244F42EC00F4031F /* BanchanHeaderView.xib */,
+				C2764D9D245899CB00E9018A /* Line.swift */,
+				C2764D9F2458AED300E9018A /* ImageCollectionView.swift */,
+				C2764DA12458AFAE00E9018A /* DescriptionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C2E8827F244F006400E2CECA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C2E88282244F05B600E2CECA /* ReusableView.swift */,
+				C2D8E102244F35EE00F4031F /* UIColorExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C2E88284244F06BE00E2CECA /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C2E88285244F06D900E2CECA /* BanchanDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C22EE1EE2451700B0046E27B /* BanchanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C22EE1F62451700C0046E27B /* Build configuration list for PBXNativeTarget "BanchanTests" */;
+			buildPhases = (
+				C22EE1EB2451700B0046E27B /* Sources */,
+				C22EE1EC2451700B0046E27B /* Frameworks */,
+				C22EE1ED2451700B0046E27B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C22EE1F52451700B0046E27B /* PBXTargetDependency */,
+			);
+			name = BanchanTests;
+			productName = BanchanTests;
+			productReference = C22EE1EF2451700B0046E27B /* BanchanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C2969992244E956200CE191F /* Banchan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C29699B2244E956600CE191F /* Build configuration list for PBXNativeTarget "Banchan" */;
+			buildPhases = (
+				C296998F244E956200CE191F /* Sources */,
+				C2969990244E956200CE191F /* Frameworks */,
+				C2969991244E956200CE191F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Banchan;
+			productName = SideDish;
+			productReference = C2969993244E956200CE191F /* Banchan.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C296998B244E956200CE191F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Chaewan Park";
+				TargetAttributes = {
+					C22EE1EE2451700B0046E27B = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = C2969992244E956200CE191F;
+					};
+					C2969992244E956200CE191F = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = C296998E244E956200CE191F /* Build configuration list for PBXProject "Banchan" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C296998A244E956200CE191F;
+			productRefGroup = C2969994244E956200CE191F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C2969992244E956200CE191F /* Banchan */,
+				C22EE1EE2451700B0046E27B /* BanchanTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C22EE1ED2451700B0046E27B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2969991244E956200CE191F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2D8E10F244F42EC00F4031F /* BanchanHeaderView.xib in Resources */,
+				C29699A3244E956600CE191F /* LaunchScreen.storyboard in Resources */,
+				C29699A0244E956600CE191F /* Assets.xcassets in Resources */,
+				C296999E244E956200CE191F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C22EE1EB2451700B0046E27B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C22EE1F22451700B0046E27B /* BanchanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C296998F244E956200CE191F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2E88283244F05B600E2CECA /* ReusableView.swift in Sources */,
+				C2764DA82458B37B00E9018A /* BanchanDetailUseCase.swift in Sources */,
+				C2E88286244F06D900E2CECA /* BanchanDelegate.swift in Sources */,
+				C2764D9C2458599700E9018A /* DetailViewController.swift in Sources */,
+				C2764D9A2458597400E9018A /* BanchanViewController.swift in Sources */,
+				C2764DA02458AED300E9018A /* ImageCollectionView.swift in Sources */,
+				C2BBA5522451844B00E76F08 /* ViewModelBinding.swift in Sources */,
+				C28003B1245020EF005D739E /* NetworkManager.swift in Sources */,
+				C2BBA55024517DB400E76F08 /* CategorizedBanchanViewModel.swift in Sources */,
+				C2764DA62458B2D300E9018A /* BanchanDetail.swift in Sources */,
+				C2CD5E78244EC65A000C41B8 /* RoundImageView.swift in Sources */,
+				C28003AF245018CA005D739E /* APIRouter.swift in Sources */,
+				C2E88278244EE65800E2CECA /* BanchanCell.swift in Sources */,
+				C28003AD245018AA005D739E /* APIBuilder.swift in Sources */,
+				C2E8827A244EE82F00E2CECA /* BanchanHeaderView.swift in Sources */,
+				C2764DAA2458B38400E9018A /* ImageUseCase.swift in Sources */,
+				C2D8E103244F35EE00F4031F /* UIColorExtension.swift in Sources */,
+				C2D8E0FF244F301100F4031F /* BadgeView.swift in Sources */,
+				C2764DA22458AFAE00E9018A /* DescriptionView.swift in Sources */,
+				C28003B524503251005D739E /* BanchanUseCase.swift in Sources */,
+				C2764DAE2458C64200E9018A /* ImageCollectionViewModel.swift in Sources */,
+				C2CD5E76244EB6D5000C41B8 /* BorderedLabel.swift in Sources */,
+				C2764D9E245899CB00E9018A /* Line.swift in Sources */,
+				C28003AB245017DB005D739E /* Endpoints.swift in Sources */,
+				C2764DA42458B1A900E9018A /* BanchanDetailResponse.swift in Sources */,
+				C2969997244E956200CE191F /* AppDelegate.swift in Sources */,
+				C2D8E105244F38A000F4031F /* BadgeLabel.swift in Sources */,
+				C2764DAC2458BDFA00E9018A /* BanchanDetailViewModel.swift in Sources */,
+				C2764D9824581C7E00E9018A /* DefaultLocation.swift in Sources */,
+				C2969999244E956200CE191F /* SceneDelegate.swift in Sources */,
+				C28003A8245012A4005D739E /* BanchanResponse.swift in Sources */,
+				C2BBA54C24517C1300E76F08 /* Banchan.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C22EE1F52451700B0046E27B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2969992244E956200CE191F /* Banchan */;
+			targetProxy = C22EE1F42451700B0046E27B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C296999C244E956200CE191F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C296999D244E956200CE191F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C29699A1244E956600CE191F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C29699A2244E956600CE191F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C22EE1F72451700C0046E27B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7R8M75S4BH;
+				INFOPLIST_FILE = BanchanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.BanchanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Banchan.app/Banchan";
+			};
+			name = Debug;
+		};
+		C22EE1F82451700C0046E27B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7R8M75S4BH;
+				INFOPLIST_FILE = BanchanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.BanchanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Banchan.app/Banchan";
+			};
+			name = Release;
+		};
+		C29699B0244E956600CE191F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C29699B1244E956600CE191F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C29699B3244E956600CE191F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7R8M75S4BH;
+				INFOPLIST_FILE = Banchan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.Banchan;
+				PRODUCT_NAME = Banchan;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C29699B4244E956600CE191F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7R8M75S4BH;
+				INFOPLIST_FILE = Banchan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.Banchan;
+				PRODUCT_NAME = Banchan;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C22EE1F62451700C0046E27B /* Build configuration list for PBXNativeTarget "BanchanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C22EE1F72451700C0046E27B /* Debug */,
+				C22EE1F82451700C0046E27B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C296998E244E956200CE191F /* Build configuration list for PBXProject "Banchan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C29699B0244E956600CE191F /* Debug */,
+				C29699B1244E956600CE191F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C29699B2244E956600CE191F /* Build configuration list for PBXNativeTarget "Banchan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C29699B3244E956600CE191F /* Debug */,
+				C29699B4244E956600CE191F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C296998B244E956200CE191F /* Project object */;
+}
