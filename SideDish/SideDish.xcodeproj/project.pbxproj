@@ -21,8 +21,8 @@
 		C2764DAE2458C64200E9018A /* ImageCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764DAD2458C64200E9018A /* ImageCollectionViewModel.swift */; };
 		C28003A8245012A4005D739E /* BanchanResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003A7245012A4005D739E /* BanchanResponse.swift */; };
 		C28003AB245017DB005D739E /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003AA245017DB005D739E /* Endpoints.swift */; };
-		C28003AD245018AA005D739E /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003AC245018AA005D739E /* APIBuilder.swift */; };
-		C28003AF245018CA005D739E /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003AE245018CA005D739E /* APIRouter.swift */; };
+		C28003AD245018AA005D739E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003AC245018AA005D739E /* Request.swift */; };
+		C28003AF245018CA005D739E /* SideDishDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003AE245018CA005D739E /* SideDishDetailRequest.swift */; };
 		C28003B1245020EF005D739E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003B0245020EF005D739E /* NetworkManager.swift */; };
 		C28003B524503251005D739E /* BanchanUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003B424503251005D739E /* BanchanUseCase.swift */; };
 		C2969997244E956200CE191F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2969996244E956200CE191F /* AppDelegate.swift */; };
@@ -33,6 +33,7 @@
 		C2BBA54C24517C1300E76F08 /* Banchan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BBA54B24517C1300E76F08 /* Banchan.swift */; };
 		C2BBA55024517DB400E76F08 /* CategorizedBanchanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BBA54F24517DB400E76F08 /* CategorizedBanchanViewModel.swift */; };
 		C2BBA5522451844B00E76F08 /* ViewModelBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BBA5512451844B00E76F08 /* ViewModelBinding.swift */; };
+		C2CC073324FF9F46000374BA /* SideDishRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CC073224FF9F46000374BA /* SideDishRequest.swift */; };
 		C2CD5E76244EB6D5000C41B8 /* BorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CD5E75244EB6D5000C41B8 /* BorderedLabel.swift */; };
 		C2CD5E78244EC65A000C41B8 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CD5E77244EC65A000C41B8 /* RoundImageView.swift */; };
 		C2D8E0FF244F301100F4031F /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8E0FE244F301100F4031F /* BadgeView.swift */; };
@@ -72,8 +73,8 @@
 		C2764DAD2458C64200E9018A /* ImageCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewModel.swift; sourceTree = "<group>"; };
 		C28003A7245012A4005D739E /* BanchanResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanResponse.swift; sourceTree = "<group>"; };
 		C28003AA245017DB005D739E /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		C28003AC245018AA005D739E /* APIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
-		C28003AE245018CA005D739E /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		C28003AC245018AA005D739E /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		C28003AE245018CA005D739E /* SideDishDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishDetailRequest.swift; sourceTree = "<group>"; };
 		C28003B0245020EF005D739E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C28003B424503251005D739E /* BanchanUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanUseCase.swift; sourceTree = "<group>"; };
 		C2969993244E956200CE191F /* SideDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +87,7 @@
 		C2BBA54B24517C1300E76F08 /* Banchan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchan.swift; sourceTree = "<group>"; };
 		C2BBA54F24517DB400E76F08 /* CategorizedBanchanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorizedBanchanViewModel.swift; sourceTree = "<group>"; };
 		C2BBA5512451844B00E76F08 /* ViewModelBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBinding.swift; sourceTree = "<group>"; };
+		C2CC073224FF9F46000374BA /* SideDishRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishRequest.swift; sourceTree = "<group>"; };
 		C2CD5E75244EB6D5000C41B8 /* BorderedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedLabel.swift; sourceTree = "<group>"; };
 		C2CD5E77244EC65A000C41B8 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		C2D8E0FE244F301100F4031F /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
@@ -149,8 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				C28003AA245017DB005D739E /* Endpoints.swift */,
-				C28003AC245018AA005D739E /* APIBuilder.swift */,
-				C28003AE245018CA005D739E /* APIRouter.swift */,
+				C28003AC245018AA005D739E /* Request.swift */,
+				C28003AE245018CA005D739E /* SideDishDetailRequest.swift */,
+				C2CC073224FF9F46000374BA /* SideDishRequest.swift */,
 				C28003B0245020EF005D739E /* NetworkManager.swift */,
 			);
 			path = Networking;
@@ -370,9 +373,9 @@
 				C2BBA55024517DB400E76F08 /* CategorizedBanchanViewModel.swift in Sources */,
 				C2764DA62458B2D300E9018A /* BanchanDetail.swift in Sources */,
 				C2CD5E78244EC65A000C41B8 /* RoundImageView.swift in Sources */,
-				C28003AF245018CA005D739E /* APIRouter.swift in Sources */,
+				C28003AF245018CA005D739E /* SideDishDetailRequest.swift in Sources */,
 				C2E88278244EE65800E2CECA /* BanchanCell.swift in Sources */,
-				C28003AD245018AA005D739E /* APIBuilder.swift in Sources */,
+				C28003AD245018AA005D739E /* Request.swift in Sources */,
 				C2E8827A244EE82F00E2CECA /* BanchanHeaderView.swift in Sources */,
 				C2764DAA2458B38400E9018A /* ImageUseCase.swift in Sources */,
 				C2D8E103244F35EE00F4031F /* UIColorExtension.swift in Sources */,
@@ -389,6 +392,7 @@
 				C2764DAC2458BDFA00E9018A /* BanchanDetailViewModel.swift in Sources */,
 				C2764D9824581C7E00E9018A /* DefaultLocation.swift in Sources */,
 				C2969999244E956200CE191F /* SceneDelegate.swift in Sources */,
+				C2CC073324FF9F46000374BA /* SideDishRequest.swift in Sources */,
 				C28003A8245012A4005D739E /* BanchanResponse.swift in Sources */,
 				C2BBA54C24517C1300E76F08 /* Banchan.swift in Sources */,
 			);

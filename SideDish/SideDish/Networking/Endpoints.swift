@@ -14,5 +14,8 @@ class Endpoints {
     static let main = "\(baseURL)/main"
     static let soup = "\(baseURL)/soup"
     static let side = "\(baseURL)/side"
-    static let detail = "\(baseURL)/detail"
+    
+    static func detail(id: String) -> String {
+        return "\(baseURL)/detail" + "/\(id)"
+    }
 }

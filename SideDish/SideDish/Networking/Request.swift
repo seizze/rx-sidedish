@@ -1,6 +1,6 @@
 //
-//  APIBuilder.swift
-//  Banchan
+//  Request.swift
+//  SideDish
 //
 //  Created by Chaewan Park on 2020/04/22.
 //  Copyright © 2020 Chaewan Park. All rights reserved.
@@ -9,33 +9,44 @@
 import Foundation
 
 enum HTTPMethod: String {
+    
     case get = "GET"
     case post = "POST"
-    case delete = "DELETE"
 }
 
-protocol APIBuilder {
-    var path: String { get }
+protocol Request {
+    
     var method: HTTPMethod { get }
-    var query: String? { get }
-    var header: [String: String] { get }
+    var path: String { get }
+    var queryItems: [String: String]? { get }
+    var headers: [String: String]? { get }
     var body: Data? { get }
-    func url() -> URL?
+    var url: URL? { get }
+    
     func urlRequest() -> URLRequest?
 }
 
-extension APIBuilder {
-    func url() -> URL? {
+extension Request {
+    
+    var method: HTTPMethod { .get }
+    
+    var queryItems: [String: String]? { nil }
+    
+    var headers: [String: String]? { nil }
+    
+    var body: Data? { nil }
+    
+    var url: URL? {
         guard var urlComponents = URLComponents(string: path) else { return nil }
-        urlComponents.query = query
+        urlComponents.queryItems = queryItems?.map { URLQueryItem(name: $0.key, value: $0.value) }
         return urlComponents.url
     }
     
     func urlRequest() -> URLRequest? {
-        guard let url = url() else { return nil }
+        guard let url = url else { return nil }
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
-        header.forEach { request.setValue($1, forHTTPHeaderField: $0) }
+        headers?.forEach { request.setValue($1, forHTTPHeaderField: $0) }
         request.httpBody = body
         return request
     }
@@ -48,21 +59,5 @@ extension APIBuilder {
             return nil
         }
         return data
-    }
-    
-    var method: HTTPMethod {
-        return .get
-    }
-    
-    var query: String? {
-        return nil
-    }
-    
-    var header: [String: String] {
-        return [:]
-    }
-    
-    var body: Data? {
-        return nil
     }
 }

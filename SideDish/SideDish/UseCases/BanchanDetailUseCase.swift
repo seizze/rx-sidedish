@@ -13,7 +13,7 @@ struct BanchanDetailUseCase {
                                 banchanID id: String,
                                 completion: @escaping (BanchanDetail) -> Void) {
         manager.request(BanchanDetailResponse.self,
-                        with: DetailPageAPIRouter.detail(banchanID: id).urlRequest()) { result in
+                        with: SideDishDetailRequest(sideDishID: id).urlRequest()) { result in
             if case let .success(response) = result { completion(response.data) }
         }
     }
