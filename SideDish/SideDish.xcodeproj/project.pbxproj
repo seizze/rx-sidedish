@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C22EE1F22451700B0046E27B /* BanchanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22EE1F12451700B0046E27B /* BanchanTests.swift */; };
 		C2764D9824581C7E00E9018A /* DefaultLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D9724581C7E00E9018A /* DefaultLocation.swift */; };
 		C2764D9A2458597400E9018A /* BanchanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D992458597400E9018A /* BanchanViewController.swift */; };
 		C2764D9C2458599700E9018A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D9B2458599700E9018A /* DetailViewController.swift */; };
@@ -57,8 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C22EE1EF2451700B0046E27B /* BanchanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BanchanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C22EE1F12451700B0046E27B /* BanchanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanTests.swift; sourceTree = "<group>"; };
+		C22EE1EF2451700B0046E27B /* SideDishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SideDishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22EE1F32451700B0046E27B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2764D9724581C7E00E9018A /* DefaultLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocation.swift; sourceTree = "<group>"; };
 		C2764D992458597400E9018A /* BanchanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BanchanViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +76,7 @@
 		C28003AE245018CA005D739E /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		C28003B0245020EF005D739E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C28003B424503251005D739E /* BanchanUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanUseCase.swift; sourceTree = "<group>"; };
-		C2969993244E956200CE191F /* Banchan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Banchan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2969993244E956200CE191F /* SideDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2969996244E956200CE191F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2969998244E956200CE191F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C296999D244E956200CE191F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,13 +116,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C22EE1F02451700B0046E27B /* BanchanTests */ = {
+		C22EE1F02451700B0046E27B /* SideDishTests */ = {
 			isa = PBXGroup;
 			children = (
-				C22EE1F12451700B0046E27B /* BanchanTests.swift */,
 				C22EE1F32451700B0046E27B /* Info.plist */,
 			);
-			path = BanchanTests;
+			path = SideDishTests;
 			sourceTree = "<group>";
 		};
 		C28003A52450124A005D739E /* Models */ = {
@@ -172,8 +169,8 @@
 		C296998A244E956200CE191F = {
 			isa = PBXGroup;
 			children = (
-				C2969995244E956200CE191F /* Banchan */,
-				C22EE1F02451700B0046E27B /* BanchanTests */,
+				C2969995244E956200CE191F /* SideDish */,
+				C22EE1F02451700B0046E27B /* SideDishTests */,
 				C2969994244E956200CE191F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -181,13 +178,13 @@
 		C2969994244E956200CE191F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C2969993244E956200CE191F /* Banchan.app */,
-				C22EE1EF2451700B0046E27B /* BanchanTests.xctest */,
+				C2969993244E956200CE191F /* SideDish.app */,
+				C22EE1EF2451700B0046E27B /* SideDishTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C2969995244E956200CE191F /* Banchan */ = {
+		C2969995244E956200CE191F /* SideDish */ = {
 			isa = PBXGroup;
 			children = (
 				C2E8827F244F006400E2CECA /* Utils */,
@@ -205,7 +202,7 @@
 				C29699A1244E956600CE191F /* LaunchScreen.storyboard */,
 				C29699A4244E956600CE191F /* Info.plist */,
 			);
-			path = Banchan;
+			path = SideDish;
 			sourceTree = "<group>";
 		};
 		C2BBA5482451786E00E76F08 /* ViewModels */ = {
@@ -256,9 +253,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C22EE1EE2451700B0046E27B /* BanchanTests */ = {
+		C22EE1EE2451700B0046E27B /* SideDishTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C22EE1F62451700C0046E27B /* Build configuration list for PBXNativeTarget "BanchanTests" */;
+			buildConfigurationList = C22EE1F62451700C0046E27B /* Build configuration list for PBXNativeTarget "SideDishTests" */;
 			buildPhases = (
 				C22EE1EB2451700B0046E27B /* Sources */,
 				C22EE1EC2451700B0046E27B /* Frameworks */,
@@ -269,14 +266,14 @@
 			dependencies = (
 				C22EE1F52451700B0046E27B /* PBXTargetDependency */,
 			);
-			name = BanchanTests;
+			name = SideDishTests;
 			productName = BanchanTests;
-			productReference = C22EE1EF2451700B0046E27B /* BanchanTests.xctest */;
+			productReference = C22EE1EF2451700B0046E27B /* SideDishTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C2969992244E956200CE191F /* Banchan */ = {
+		C2969992244E956200CE191F /* SideDish */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C29699B2244E956600CE191F /* Build configuration list for PBXNativeTarget "Banchan" */;
+			buildConfigurationList = C29699B2244E956600CE191F /* Build configuration list for PBXNativeTarget "SideDish" */;
 			buildPhases = (
 				C296998F244E956200CE191F /* Sources */,
 				C2969990244E956200CE191F /* Frameworks */,
@@ -286,9 +283,9 @@
 			);
 			dependencies = (
 			);
-			name = Banchan;
+			name = SideDish;
 			productName = SideDish;
-			productReference = C2969993244E956200CE191F /* Banchan.app */;
+			productReference = C2969993244E956200CE191F /* SideDish.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -310,7 +307,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C296998E244E956200CE191F /* Build configuration list for PBXProject "Banchan" */;
+			buildConfigurationList = C296998E244E956200CE191F /* Build configuration list for PBXProject "SideDish" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -323,8 +320,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C2969992244E956200CE191F /* Banchan */,
-				C22EE1EE2451700B0046E27B /* BanchanTests */,
+				C2969992244E956200CE191F /* SideDish */,
+				C22EE1EE2451700B0046E27B /* SideDishTests */,
 			);
 		};
 /* End PBXProject section */
@@ -355,7 +352,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C22EE1F22451700B0046E27B /* BanchanTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +399,7 @@
 /* Begin PBXTargetDependency section */
 		C22EE1F52451700B0046E27B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C2969992244E956200CE191F /* Banchan */;
+			target = C2969992244E956200CE191F /* SideDish */;
 			targetProxy = C22EE1F42451700B0046E27B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -444,7 +440,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Banchan.app/Banchan";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SideDish.app/SideDish";
 			};
 			name = Debug;
 		};
@@ -464,7 +460,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Banchan.app/Banchan";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SideDish.app/SideDish";
 			};
 			name = Release;
 		};
@@ -588,13 +584,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R8M75S4BH;
-				INFOPLIST_FILE = Banchan/Info.plist;
+				INFOPLIST_FILE = SideDish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.Banchan;
-				PRODUCT_NAME = Banchan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.SideDish;
+				PRODUCT_NAME = SideDish;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -606,13 +602,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R8M75S4BH;
-				INFOPLIST_FILE = Banchan/Info.plist;
+				INFOPLIST_FILE = SideDish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.Banchan;
-				PRODUCT_NAME = Banchan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.SideDish;
+				PRODUCT_NAME = SideDish;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -621,7 +617,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C22EE1F62451700C0046E27B /* Build configuration list for PBXNativeTarget "BanchanTests" */ = {
+		C22EE1F62451700C0046E27B /* Build configuration list for PBXNativeTarget "SideDishTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C22EE1F72451700C0046E27B /* Debug */,
@@ -630,7 +626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C296998E244E956200CE191F /* Build configuration list for PBXProject "Banchan" */ = {
+		C296998E244E956200CE191F /* Build configuration list for PBXProject "SideDish" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C29699B0244E956600CE191F /* Debug */,
@@ -639,7 +635,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C29699B2244E956600CE191F /* Build configuration list for PBXNativeTarget "Banchan" */ = {
+		C29699B2244E956600CE191F /* Build configuration list for PBXNativeTarget "SideDish" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C29699B3244E956600CE191F /* Debug */,
