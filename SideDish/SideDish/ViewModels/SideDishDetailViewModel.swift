@@ -1,5 +1,5 @@
 //
-//  BanchanDetailViewModel.swift
+//  SideDishDetailViewModel.swift
 //  SideDish
 //
 //  Created by Chaewan Park on 2020/04/29.
@@ -8,8 +8,11 @@
 
 import Foundation
 
-class BanchanDetailViewModel: ViewModelBinding {
+class SideDishDetailViewModel: ViewModelBinding {
+    
     typealias Key = BanchanDetail?
+    
+    let sideDishID: String
     
     private var banchanDetail: Key = nil {
         didSet { changeHandler(banchanDetail) }
@@ -17,9 +20,10 @@ class BanchanDetailViewModel: ViewModelBinding {
     
     private var changeHandler: (Key) -> Void
     
-    init(with banchanDetail: Key = nil, handler: @escaping (Key) -> Void = { _ in }) {
+    init(with sideDishID: String, handler: @escaping (Key) -> Void = { _ in }) {
+        self.sideDishID = sideDishID
         self.changeHandler = handler
-        self.banchanDetail = banchanDetail
+        self.banchanDetail = nil
         changeHandler(banchanDetail)
     }
     

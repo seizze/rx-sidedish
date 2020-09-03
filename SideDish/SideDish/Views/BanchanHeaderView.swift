@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BanchanHeaderView: UITableViewHeaderFooterView {
+class BanchanHeaderView: UITableViewHeaderFooterView, Identifiable {
     
     @IBOutlet weak var categoryLabel: BorderedLabel!
     @IBOutlet weak var titleLabel: UILabel!

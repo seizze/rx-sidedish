@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  SideDishDetailViewController.swift
 //  SideDish
 //
 //  Created by Chaewan Park on 2020/04/28.
@@ -8,21 +8,23 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class SideDishDetailViewController: UIViewController {
     
     @IBOutlet weak var pagingView: ImageCollectionView!
     @IBOutlet weak var descriptionView: DescriptionView!
     @IBOutlet weak var detailView: ImageCollectionView!
     
+    var viewModel: SideDishDetailViewModel?
+    
     private var pagingViewModel = ImageCollectionViewModel()
     private var detailViewModel = ImageCollectionViewModel()
-    
-    var descriptionViewModel = BanchanDetailViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureViewModels()
+        
+        fetchSideDishDetail()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +41,7 @@ class DetailViewController: UIViewController {
             guard let index = change?.index else { return }
             DispatchQueue.main.async { self?.detailView.update(change?.images[index] ?? nil, at: index) }
         }
-        descriptionViewModel.updateNotify { [weak self] detail in
+        viewModel?.updateNotify { [weak self] detail in
             DispatchQueue.main.async {
                 self?.descriptionView.titleLabel.text = self?.title
                 self?.descriptionView.banchanDetail = detail
@@ -60,5 +62,26 @@ class DetailViewController: UIViewController {
         images?.enumerated().forEach { index, url in
             ImageUseCase().image(from: url) { completion($0, index) }
         }
+    }
+    
+    private func fetchSideDishDetail() {
+        guard let id = viewModel?.sideDishID else { return }
+        BanchanDetailUseCase().fetchDetail(of: id) {
+            self.viewModel?.update(banchanDetail: $0)
+        }
+    }
+}
+
+extension SideDishDetailViewController: Identifiable {
+    
+    static func instantiate(
+        from storyboard: StoryboardRouter = .sideDishDetail,
+        title: String,
+        viewModel: SideDishDetailViewModel
+    ) -> Self? {
+        guard let viewController = storyboard.load(viewControllerType: self) else { return nil }
+        viewController.title = title
+        viewController.viewModel = viewModel
+        return viewController
     }
 }

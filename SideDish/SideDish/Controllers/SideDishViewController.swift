@@ -1,5 +1,5 @@
 //
-//  BanchanViewController.swift
+//  SideDishViewController.swift
 //  SideDish
 //
 //  Created by Chaewan Park on 2020/04/21.
@@ -8,20 +8,22 @@
 
 import UIKit
 
-class BanchanViewController: UIViewController {
+class SideDishViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     private let viewModel = CategorizedBanchanViewModel()
     private let delegate = BanchanDelegate()
-    private let queue = DispatchQueue(label: "networking")
+    private let queue = DispatchQueue(label: "sidedish.networking")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTableView()
         configureViewModel()
-        configureUseCase()
+        configureDelegate()
+        
+        fetchSideDishes()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,18 +31,8 @@ class BanchanViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let viewController = segue.destination as? DetailViewController,
-            let indexPath = tableView.indexPathForSelectedRow,
-            let item = viewModel.banchan(category: indexPath.section, index: indexPath.row) else { return }
-        viewController.title = item.title
-        BanchanDetailUseCase().fetchDetail(of: item.detailHash) {
-            viewController.descriptionViewModel.update(banchanDetail: $0)
-        }
-    }
-    
     private func configureTableView() {
-        tableView.register(BanchanHeaderView.nib, forHeaderFooterViewReuseIdentifier: BanchanHeaderView.reuseIdentifier)
+        tableView.register(BanchanHeaderView.nib, forHeaderFooterViewReuseIdentifier: BanchanHeaderView.identifier)
         tableView.delegate = delegate
         tableView.dataSource = viewModel
     }
@@ -57,11 +49,27 @@ class BanchanViewController: UIViewController {
         }
     }
     
-    private func configureUseCase() {
+    private func configureDelegate() {
+        delegate.didSelectRowAt = { [weak self] indexPath in
+            guard let item = self?.viewModel.banchan(category: indexPath.section, index: indexPath.row) else { return }
+            let viewModel = SideDishDetailViewModel(with: item.detailHash)
+            let viewController = SideDishDetailViewController.instantiate(title: item.title, viewModel: viewModel)
+            self?.navigationController?.show(viewController ?? UIViewController(), sender: nil)
+        }
+    }
+    
+    private func fetchSideDishes() {
         BanchanUseCase().fetchSideDishes { index, banchans in
             self.queue.sync {
                 self.viewModel.append(key: index, value: banchans)
             }
         }
+    }
+}
+
+extension SideDishViewController: Identifiable {
+    
+    static func instantiate(from storyboard: StoryboardRouter = .sideDish) -> Self? {
+        return storyboard.load(viewControllerType: self)
     }
 }

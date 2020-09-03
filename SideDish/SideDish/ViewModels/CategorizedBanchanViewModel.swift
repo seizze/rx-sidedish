@@ -68,7 +68,7 @@ extension CategorizedBanchanViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: BanchanCell.reuseIdentifier, for: indexPath) as? BanchanCell else { return BanchanCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: BanchanCell.identifier, for: indexPath) as? BanchanCell else { return BanchanCell() }
         cell.banchan = banchan(category: indexPath.section, index: indexPath.row)
         return cell
     }

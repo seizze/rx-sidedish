@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BanchanCell: UITableViewCell {
+class BanchanCell: UITableViewCell, Identifiable {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
