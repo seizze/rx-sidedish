@@ -34,7 +34,7 @@ class BanchanViewController: UIViewController {
             let indexPath = tableView.indexPathForSelectedRow,
             let item = viewModel.banchan(category: indexPath.section, index: indexPath.row) else { return }
         viewController.title = item.title
-        BanchanDetailUseCase.performFetching(with: NetworkManager(), banchanID: item.detailHash) {
+        BanchanDetailUseCase().fetchDetail(of: item.detailHash) {
             viewController.descriptionViewModel.update(banchanDetail: $0)
         }
     }
@@ -58,7 +58,7 @@ class BanchanViewController: UIViewController {
     }
     
     private func configureUseCase() {
-        BanchanUseCase.performFetching(with: NetworkManager()) { index, banchans in
+        BanchanUseCase().fetchSideDishes { index, banchans in
             self.queue.sync {
                 self.viewModel.append(key: index, value: banchans)
             }

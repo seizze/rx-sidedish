@@ -9,12 +9,16 @@
 import Foundation
 
 struct BanchanDetailUseCase {
-    static func performFetching(with manager: NetworkManageable,
-                                banchanID id: String,
-                                completion: @escaping (BanchanDetail) -> Void) {
-        manager.request(BanchanDetailResponse.self,
-                        with: SideDishDetailRequest(sideDishID: id).urlRequest()) { result in
-            if case let .success(response) = result { completion(response.data) }
+    
+    func fetchDetail(
+        of id: String,
+        completion: @escaping (BanchanDetail) -> Void
+    ) {
+        let request = SideDishDetailRequest(sideDishID: id)
+        SideDishDetailTask(dispatcher: NetworkSession(session: .shared)).perform(request) { result in
+            if case let .success(detail) = result {
+                completion(detail.data)
+            }
         }
     }
 }

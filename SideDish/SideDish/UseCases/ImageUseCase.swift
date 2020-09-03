@@ -6,28 +6,22 @@
 //  Copyright © 2020 Chaewan Park. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct ImageUseCase {
-    static func performFetching(with manager: NetworkManageable,
-                                url: String,
-                                completion: @escaping (Data) -> ()) {
-        guard let url = URL(string: url) else { return }
-        let imageExists = readIfImageExists(url.lastPathComponent) { image in
-            completion(image)
-        }
-        if imageExists { return }
-        manager.downloadImage(with: URLRequest(url: url)) { result in
-            if case let .success(image) = result { completion(image) }
-        }
-    }
     
-    private static func readIfImageExists(_ name: String, block: @escaping (Data) -> ()) -> Bool {
-        let path = DefaultLocation.download.appendingPathComponent(name)
-        if FileManager.default.fileExists(atPath: path.path) {
-            block(try! Data(contentsOf: path))
-            return true
+    func image(
+        from path: String,
+        completion: @escaping (UIImage?) -> ()
+    ) {
+        let diskCache = DiskStorage(manager: .default)
+        if let data = diskCache.data(url: path) {
+            completion(UIImage(data: data))
+            return
         }
-        return false
+        let request = ImageRequest(path: path)
+        ImageTask(dispatcher: NetworkSession(session: .shared), storage: diskCache).perform(request) { result in
+            if case let .success(data) = result { completion(UIImage(data: data)) }
+        }
     }
 }

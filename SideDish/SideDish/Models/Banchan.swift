@@ -9,6 +9,7 @@
 import Foundation
 
 struct Banchan: Decodable {
+    
     let detailHash: String
     let image: String
     let alt: String

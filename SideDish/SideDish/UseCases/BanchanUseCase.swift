@@ -9,11 +9,13 @@
 import Foundation
 
 struct BanchanUseCase {
-    static func performFetching(with manager: NetworkManageable,
-                                completion: @escaping (Int, [Banchan]) -> Void) {
-        SideDishRequest.allCases.enumerated().forEach { index, router in
-            manager.request(BanchanResponse.self, with: router.urlRequest()) { result in
-                if case let .success(response) = result { completion(index, response.body) }
+    
+    func fetchSideDishes(completion: @escaping (Int, [Banchan]) -> Void) {
+        SideDishRequest.allCases.enumerated().forEach { index, request in
+            SideDishTask(dispatcher: NetworkSession(session: .shared)).perform(request) { result in
+                if case let .success(response) = result {
+                    completion(index, response.body)
+                }
             }
         }
     }

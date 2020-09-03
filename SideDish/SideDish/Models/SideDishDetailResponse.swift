@@ -1,5 +1,5 @@
 //
-//  BanchanDetailResponse.swift
+//  SideDishDetailResponse.swift
 //  SideDish
 //
 //  Created by Chaewan Park on 2020/04/29.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-struct BanchanDetailResponse: Decodable {
+struct SideDishDetailResponse: Decodable {
+    
     let data: BanchanDetail
 }

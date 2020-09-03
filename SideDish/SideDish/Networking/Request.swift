@@ -61,3 +61,28 @@ extension Request {
         return data
     }
 }
+
+enum SideDishRequest: Request, CaseIterable {
+    
+    case main, soup, side
+    
+    var path: String {
+        switch self {
+        case .main: return Endpoints.main
+        case .soup: return Endpoints.soup
+        case .side: return Endpoints.side
+        }
+    }
+}
+
+struct ImageRequest: Request {
+    
+    let path: String
+}
+
+struct SideDishDetailRequest: Request {
+    
+    let sideDishID: String
+    
+    var path: String { Endpoints.detail(id: sideDishID) }
+}

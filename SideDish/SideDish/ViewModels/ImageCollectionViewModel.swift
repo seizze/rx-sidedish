@@ -10,7 +10,7 @@ import UIKit
 
 struct ImagesChangeDetails {
     let index: Int?
-    let images: [Int: UIImage]
+    let images: [Int: UIImage?]
 }
 
 extension ImagesChangeDetails {
@@ -43,7 +43,7 @@ class ImageCollectionViewModel: ViewModelBinding {
         self.changeHandler = handler
     }
     
-    func add(_ image: UIImage, at index: Int) {
+    func add(_ image: UIImage?, at index: Int) {
         guard var images = imagesChageDetails?.images else { return }
         images[index] = image
         imagesChageDetails = ImagesChangeDetails(index: index, images: images)

@@ -34,8 +34,7 @@ class BanchanCell: UITableViewCell {
         priceStackView.spacing = CGFloat(!(banchan?.isOnSale ?? true) ? 4 : 0)
         banchan?.badge?.forEach { badgeView.addBadge($0) }
         guard let url = banchan?.image else { return }
-        ImageUseCase.performFetching(with: NetworkManager(), url: url) {
-            guard let image = UIImage(data: $0) else { return }
+        ImageUseCase().image(from: url) { image in
             DispatchQueue.main.async { self.banchanImageView.image = image }
         }
     }
