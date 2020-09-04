@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BanchanCell" id="jMU-QL-v79" userLabel="Product Cell" customClass="BanchanCell" customModule="SideDish" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideDishCell" id="jMU-QL-v79" customClass="SideDishCell" customModule="SideDish" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="133"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jMU-QL-v79" id="lA3-vX-3XH">
@@ -110,10 +110,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="badgeView" destination="sdD-SG-vc3" id="v4n-us-uai"/>
-                                            <outlet property="banchanImageView" destination="AR6-Ai-jgg" id="kXy-n2-dn4"/>
                                             <outlet property="detailLabel" destination="6AF-5Z-8f1" id="zYQ-pk-Qit"/>
                                             <outlet property="normalPriceLabel" destination="yGT-K4-1mJ" id="xzi-G9-xx7"/>
                                             <outlet property="priceStackView" destination="sRA-PH-OB0" id="fzD-7B-3Td"/>
+                                            <outlet property="roundImageView" destination="AR6-Ai-jgg" id="kXy-n2-dn4"/>
                                             <outlet property="salePriceLabel" destination="Cbq-Of-FYV" id="hHC-nt-GCU"/>
                                             <outlet property="titleLabel" destination="8se-S1-hF1" id="WVz-qs-n62"/>
                                         </connections>

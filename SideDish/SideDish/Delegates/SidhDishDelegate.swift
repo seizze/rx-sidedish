@@ -1,5 +1,5 @@
 //
-//  BanchanDelegate.swift
+//  SidhDishDelegate.swift
 //  SideDish
 //
 //  Created by Chaewan Park on 2020/04/21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BanchanDelegate: NSObject {
+class SidhDishDelegate: NSObject {
     
     var didSelectRowAt: ((IndexPath) -> Void)?
     
@@ -20,14 +20,14 @@ class BanchanDelegate: NSObject {
     ]
 }
 
-extension BanchanDelegate: UITableViewDelegate {
+extension SidhDishDelegate: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         didSelectRowAt?(indexPath)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: BanchanHeaderView.identifier) as? BanchanHeaderView else { return UIView() }
+        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SideDishHeaderView.identifier) as? SideDishHeaderView else { return UIView() }
         view.titleLabel.text = titles[section]
         view.categoryLabel.text = categories[section]
         return view

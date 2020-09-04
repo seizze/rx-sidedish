@@ -1,5 +1,5 @@
 //
-//  BanchanCell.swift
+//  SideDishCell.swift
 //  SideDish
 //
 //  Created by Chaewan Park on 2020/04/21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BanchanCell: UITableViewCell, Identifiable {
+class SideDishCell: UITableViewCell, Identifiable {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
@@ -16,9 +16,9 @@ class BanchanCell: UITableViewCell, Identifiable {
     @IBOutlet weak var salePriceLabel: UILabel!
     @IBOutlet weak var priceStackView: UIStackView!
     @IBOutlet weak var badgeView: BadgeView!
-    @IBOutlet weak var banchanImageView: RoundImageView!
+    @IBOutlet weak var roundImageView: RoundImageView!
     
-    var banchan: Banchan? = nil {
+    var sideDish: SideDish? = nil {
         didSet { configureCell() }
     }
     
@@ -27,15 +27,15 @@ class BanchanCell: UITableViewCell, Identifiable {
     }
     
     private func configureCell() {
-        titleLabel.text = banchan?.title
-        detailLabel.text = banchan?.banchanDescription
-        normalPriceLabel.text = banchan?.nPrice
-        salePriceLabel.text = banchan?.salePrice
-        priceStackView.spacing = CGFloat(!(banchan?.isOnSale ?? true) ? 4 : 0)
-        banchan?.badge?.forEach { badgeView.addBadge($0) }
-        guard let url = banchan?.image else { return }
+        titleLabel.text = sideDish?.title
+        detailLabel.text = sideDish?.sideDishDescription
+        normalPriceLabel.text = sideDish?.nPrice
+        salePriceLabel.text = sideDish?.salePrice
+        priceStackView.spacing = CGFloat(!(sideDish?.isOnSale ?? true) ? 4 : 0)
+        sideDish?.badge?.forEach { badgeView.addBadge($0) }
+        guard let url = sideDish?.image else { return }
         ImageUseCase().image(from: url) { image in
-            DispatchQueue.main.async { self.banchanImageView.image = image }
+            DispatchQueue.main.async { self.roundImageView.image = image }
         }
     }
 }

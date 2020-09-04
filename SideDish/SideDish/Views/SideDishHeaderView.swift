@@ -1,5 +1,5 @@
 //
-//  BanchanHeaderView.swift
+//  SideDishHeaderView.swift
 //  SideDish
 //
 //  Created by Chaewan Park on 2020/04/21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BanchanHeaderView: UITableViewHeaderFooterView, Identifiable {
+class SideDishHeaderView: UITableViewHeaderFooterView, Identifiable {
     
     @IBOutlet weak var categoryLabel: BorderedLabel!
     @IBOutlet weak var titleLabel: UILabel!

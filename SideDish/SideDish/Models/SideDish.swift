@@ -1,5 +1,5 @@
 //
-//  Banchan.swift
+//  SideDish.swift
 //  SideDish
 //
 //  Created by Chaewan Park on 2020/04/23.
@@ -8,23 +8,24 @@
 
 import Foundation
 
-struct Banchan: Decodable {
+struct SideDish: Decodable {
     
     let detailHash: String
     let image: String
     let alt: String
     let deliveryType: [DeliveryType]
-    let title, banchanDescription: String
+    let title, sideDishDescription: String
     let nPrice: String?
     let sPrice: String
     let badge: [Badge]?
     
     enum CodingKeys: String, CodingKey {
+        
         case detailHash = "detail_hash"
         case image, alt
         case deliveryType = "delivery_type"
         case title
-        case banchanDescription = "description"
+        case sideDishDescription = "description"
         case nPrice = "n_price"
         case sPrice = "s_price"
         case badge
@@ -32,11 +33,13 @@ struct Banchan: Decodable {
 }
 
 enum DeliveryType: String, Decodable {
+    
     case dawn = "새벽배송"
     case nationwide = "전국택배"
 }
 
 struct Badge: Decodable {
+    
     let name: String
     
     init(from decoder: Decoder) throws {
@@ -49,7 +52,8 @@ struct Badge: Decodable {
     }
 }
 
-extension Banchan {
+extension SideDish {
+    
     var isOnSale: Bool {
         return nPrice == nil
     }

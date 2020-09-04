@@ -9,5 +9,5 @@
 import Foundation
 
 struct SideDishResponse: Decodable {
-    let body: [Banchan]
+    let body: [SideDish]
 }

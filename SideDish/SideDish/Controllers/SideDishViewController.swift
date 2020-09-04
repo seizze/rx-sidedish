@@ -12,8 +12,9 @@ class SideDishViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let viewModel = CategorizedBanchanViewModel()
-    private let delegate = BanchanDelegate()
+    private let viewModel = SideDishViewModel()
+    private let delegate = SidhDishDelegate()
+    
     private let queue = DispatchQueue(label: "sidedish.networking")
     
     override func viewDidLoad() {
@@ -32,7 +33,7 @@ class SideDishViewController: UIViewController {
     }
     
     private func configureTableView() {
-        tableView.register(BanchanHeaderView.nib, forHeaderFooterViewReuseIdentifier: BanchanHeaderView.identifier)
+        tableView.register(SideDishHeaderView.nib, forHeaderFooterViewReuseIdentifier: SideDishHeaderView.identifier)
         tableView.delegate = delegate
         tableView.dataSource = viewModel
     }
@@ -51,7 +52,7 @@ class SideDishViewController: UIViewController {
     
     private func configureDelegate() {
         delegate.didSelectRowAt = { [weak self] indexPath in
-            guard let item = self?.viewModel.banchan(category: indexPath.section, index: indexPath.row) else { return }
+            guard let item = self?.viewModel.sideDish(category: indexPath.section, index: indexPath.row) else { return }
             let viewModel = SideDishDetailViewModel(with: item.detailHash)
             let viewController = SideDishDetailViewController.instantiate(title: item.title, viewModel: viewModel)
             self?.navigationController?.show(viewController ?? UIViewController(), sender: nil)
@@ -59,9 +60,9 @@ class SideDishViewController: UIViewController {
     }
     
     private func fetchSideDishes() {
-        BanchanUseCase().fetchSideDishes { index, banchans in
+        SideDishUseCase().fetchSideDishes { index, sideDishes in
             self.queue.sync {
-                self.viewModel.append(key: index, value: banchans)
+                self.viewModel.append(key: index, value: sideDishes)
             }
         }
     }

@@ -11,6 +11,7 @@
 		C24751802500E075006CCFD2 /* StoryboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247517F2500E075006CCFD2 /* StoryboardRouter.swift */; };
 		C24751832500F2BD006CCFD2 /* SideDish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24751812500F2BD006CCFD2 /* SideDish.storyboard */; };
 		C24751842500F2BD006CCFD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24751822500F2BD006CCFD2 /* LaunchScreen.storyboard */; };
+		C272A3EF25028D9500E7ABB6 /* SideDishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C272A3EE25028D9500E7ABB6 /* SideDishTests.swift */; };
 		C2764D9824581C7E00E9018A /* DefaultLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D9724581C7E00E9018A /* DefaultLocation.swift */; };
 		C2764D9A2458597400E9018A /* SideDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D992458597400E9018A /* SideDishViewController.swift */; };
 		C2764D9C2458599700E9018A /* SideDishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D9B2458599700E9018A /* SideDishDetailViewController.swift */; };
@@ -26,12 +27,12 @@
 		C28003A8245012A4005D739E /* SideDishResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003A7245012A4005D739E /* SideDishResponse.swift */; };
 		C28003AB245017DB005D739E /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003AA245017DB005D739E /* Endpoints.swift */; };
 		C28003AD245018AA005D739E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003AC245018AA005D739E /* Request.swift */; };
-		C28003B524503251005D739E /* BanchanUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003B424503251005D739E /* BanchanUseCase.swift */; };
+		C28003B524503251005D739E /* SideDishUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28003B424503251005D739E /* SideDishUseCase.swift */; };
 		C2969997244E956200CE191F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2969996244E956200CE191F /* AppDelegate.swift */; };
 		C2969999244E956200CE191F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2969998244E956200CE191F /* SceneDelegate.swift */; };
 		C29699A0244E956600CE191F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C296999F244E956600CE191F /* Assets.xcassets */; };
-		C2BBA54C24517C1300E76F08 /* Banchan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BBA54B24517C1300E76F08 /* Banchan.swift */; };
-		C2BBA55024517DB400E76F08 /* CategorizedBanchanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BBA54F24517DB400E76F08 /* CategorizedBanchanViewModel.swift */; };
+		C2BBA54C24517C1300E76F08 /* SideDish.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BBA54B24517C1300E76F08 /* SideDish.swift */; };
+		C2BBA55024517DB400E76F08 /* SideDishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BBA54F24517DB400E76F08 /* SideDishViewModel.swift */; };
 		C2BBA5522451844B00E76F08 /* ViewModelBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BBA5512451844B00E76F08 /* ViewModelBinding.swift */; };
 		C2CC073524FFB43B000374BA /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CC073424FFB43B000374BA /* NetworkDispatcher.swift */; };
 		C2CC073924FFC699000374BA /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CC073824FFC699000374BA /* NetworkTask.swift */; };
@@ -41,11 +42,11 @@
 		C2D8E0FF244F301100F4031F /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8E0FE244F301100F4031F /* BadgeView.swift */; };
 		C2D8E103244F35EE00F4031F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8E102244F35EE00F4031F /* UIColorExtension.swift */; };
 		C2D8E105244F38A000F4031F /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8E104244F38A000F4031F /* BadgeLabel.swift */; };
-		C2D8E10F244F42EC00F4031F /* BanchanHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D8E10E244F42EC00F4031F /* BanchanHeaderView.xib */; };
-		C2E88278244EE65800E2CECA /* BanchanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88277244EE65800E2CECA /* BanchanCell.swift */; };
-		C2E8827A244EE82F00E2CECA /* BanchanHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88279244EE82F00E2CECA /* BanchanHeaderView.swift */; };
+		C2D8E10F244F42EC00F4031F /* SideDishHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D8E10E244F42EC00F4031F /* SideDishHeaderView.xib */; };
+		C2E88278244EE65800E2CECA /* SideDishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88277244EE65800E2CECA /* SideDishCell.swift */; };
+		C2E8827A244EE82F00E2CECA /* SideDishHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88279244EE82F00E2CECA /* SideDishHeaderView.swift */; };
 		C2E88283244F05B600E2CECA /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88282244F05B600E2CECA /* Identifiable.swift */; };
-		C2E88286244F06D900E2CECA /* BanchanDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88285244F06D900E2CECA /* BanchanDelegate.swift */; };
+		C2E88286244F06D900E2CECA /* SidhDishDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88285244F06D900E2CECA /* SidhDishDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		C247517F2500E075006CCFD2 /* StoryboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRouter.swift; sourceTree = "<group>"; };
 		C24751812500F2BD006CCFD2 /* SideDish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideDish.storyboard; sourceTree = "<group>"; };
 		C24751822500F2BD006CCFD2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C272A3EE25028D9500E7ABB6 /* SideDishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishTests.swift; sourceTree = "<group>"; };
 		C2764D9724581C7E00E9018A /* DefaultLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocation.swift; sourceTree = "<group>"; };
 		C2764D992458597400E9018A /* SideDishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDishViewController.swift; sourceTree = "<group>"; };
 		C2764D9B2458599700E9018A /* SideDishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishDetailViewController.swift; sourceTree = "<group>"; };
@@ -80,14 +82,14 @@
 		C28003A7245012A4005D739E /* SideDishResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishResponse.swift; sourceTree = "<group>"; };
 		C28003AA245017DB005D739E /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		C28003AC245018AA005D739E /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		C28003B424503251005D739E /* BanchanUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanUseCase.swift; sourceTree = "<group>"; };
+		C28003B424503251005D739E /* SideDishUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishUseCase.swift; sourceTree = "<group>"; };
 		C2969993244E956200CE191F /* SideDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2969996244E956200CE191F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2969998244E956200CE191F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C296999F244E956600CE191F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C29699A4244E956600CE191F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2BBA54B24517C1300E76F08 /* Banchan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchan.swift; sourceTree = "<group>"; };
-		C2BBA54F24517DB400E76F08 /* CategorizedBanchanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorizedBanchanViewModel.swift; sourceTree = "<group>"; };
+		C2BBA54B24517C1300E76F08 /* SideDish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDish.swift; sourceTree = "<group>"; };
+		C2BBA54F24517DB400E76F08 /* SideDishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishViewModel.swift; sourceTree = "<group>"; };
 		C2BBA5512451844B00E76F08 /* ViewModelBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBinding.swift; sourceTree = "<group>"; };
 		C2CC073424FFB43B000374BA /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		C2CC073824FFC699000374BA /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
@@ -97,11 +99,11 @@
 		C2D8E0FE244F301100F4031F /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		C2D8E102244F35EE00F4031F /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		C2D8E104244F38A000F4031F /* BadgeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
-		C2D8E10E244F42EC00F4031F /* BanchanHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BanchanHeaderView.xib; sourceTree = "<group>"; };
-		C2E88277244EE65800E2CECA /* BanchanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanCell.swift; sourceTree = "<group>"; };
-		C2E88279244EE82F00E2CECA /* BanchanHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanHeaderView.swift; sourceTree = "<group>"; };
+		C2D8E10E244F42EC00F4031F /* SideDishHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideDishHeaderView.xib; sourceTree = "<group>"; };
+		C2E88277244EE65800E2CECA /* SideDishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishCell.swift; sourceTree = "<group>"; };
+		C2E88279244EE82F00E2CECA /* SideDishHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishHeaderView.swift; sourceTree = "<group>"; };
 		C2E88282244F05B600E2CECA /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
-		C2E88285244F06D900E2CECA /* BanchanDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanDelegate.swift; sourceTree = "<group>"; };
+		C2E88285244F06D900E2CECA /* SidhDishDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidhDishDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		C22EE1F02451700B0046E27B /* SideDishTests */ = {
 			isa = PBXGroup;
 			children = (
+				C272A3EE25028D9500E7ABB6 /* SideDishTests.swift */,
 				C22EE1F32451700B0046E27B /* Info.plist */,
 			);
 			path = SideDishTests;
@@ -143,7 +146,7 @@
 		C28003A52450124A005D739E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C2BBA54B24517C1300E76F08 /* Banchan.swift */,
+				C2BBA54B24517C1300E76F08 /* SideDish.swift */,
 				C28003A7245012A4005D739E /* SideDishResponse.swift */,
 				C2764DA52458B2D300E9018A /* BanchanDetail.swift */,
 				C2764DA32458B1A900E9018A /* SideDishDetailResponse.swift */,
@@ -175,7 +178,7 @@
 		C28003B32450323D005D739E /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				C28003B424503251005D739E /* BanchanUseCase.swift */,
+				C28003B424503251005D739E /* SideDishUseCase.swift */,
 				C2764DA72458B37B00E9018A /* BanchanDetailUseCase.swift */,
 				C2764DA92458B38400E9018A /* ImageUseCase.swift */,
 			);
@@ -225,7 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				C2BBA5512451844B00E76F08 /* ViewModelBinding.swift */,
-				C2BBA54F24517DB400E76F08 /* CategorizedBanchanViewModel.swift */,
+				C2BBA54F24517DB400E76F08 /* SideDishViewModel.swift */,
 				C2764DAB2458BDFA00E9018A /* SideDishDetailViewModel.swift */,
 				C2764DAD2458C64200E9018A /* ImageCollectionViewModel.swift */,
 			);
@@ -246,10 +249,10 @@
 				C2D8E104244F38A000F4031F /* BadgeLabel.swift */,
 				C2CD5E75244EB6D5000C41B8 /* BorderedLabel.swift */,
 				C2CD5E77244EC65A000C41B8 /* RoundImageView.swift */,
-				C2E88277244EE65800E2CECA /* BanchanCell.swift */,
-				C2E88279244EE82F00E2CECA /* BanchanHeaderView.swift */,
+				C2E88277244EE65800E2CECA /* SideDishCell.swift */,
+				C2E88279244EE82F00E2CECA /* SideDishHeaderView.swift */,
 				C2D8E0FE244F301100F4031F /* BadgeView.swift */,
-				C2D8E10E244F42EC00F4031F /* BanchanHeaderView.xib */,
+				C2D8E10E244F42EC00F4031F /* SideDishHeaderView.xib */,
 				C2764D9D245899CB00E9018A /* Line.swift */,
 				C2764D9F2458AED300E9018A /* ImageCollectionView.swift */,
 				C2764DA12458AFAE00E9018A /* DescriptionView.swift */,
@@ -270,7 +273,7 @@
 		C2E88284244F06BE00E2CECA /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				C2E88285244F06D900E2CECA /* BanchanDelegate.swift */,
+				C2E88285244F06D900E2CECA /* SidhDishDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				TargetAttributes = {
 					C22EE1EE2451700B0046E27B = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1170;
 						TestTargetID = C2969992244E956200CE191F;
 					};
 					C2969992244E956200CE191F = {
@@ -364,7 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C247517E2500DF57006CCFD2 /* SideDishDetail.storyboard in Resources */,
-				C2D8E10F244F42EC00F4031F /* BanchanHeaderView.xib in Resources */,
+				C2D8E10F244F42EC00F4031F /* SideDishHeaderView.xib in Resources */,
 				C29699A0244E956600CE191F /* Assets.xcassets in Resources */,
 				C24751842500F2BD006CCFD2 /* LaunchScreen.storyboard in Resources */,
 				C24751832500F2BD006CCFD2 /* SideDish.storyboard in Resources */,
@@ -378,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C272A3EF25028D9500E7ABB6 /* SideDishTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,25 +392,25 @@
 			files = (
 				C2E88283244F05B600E2CECA /* Identifiable.swift in Sources */,
 				C2764DA82458B37B00E9018A /* BanchanDetailUseCase.swift in Sources */,
-				C2E88286244F06D900E2CECA /* BanchanDelegate.swift in Sources */,
+				C2E88286244F06D900E2CECA /* SidhDishDelegate.swift in Sources */,
 				C2764D9C2458599700E9018A /* SideDishDetailViewController.swift in Sources */,
 				C2764D9A2458597400E9018A /* SideDishViewController.swift in Sources */,
 				C2CC073C24FFF2EA000374BA /* CacheStorage.swift in Sources */,
 				C2764DA02458AED300E9018A /* ImageCollectionView.swift in Sources */,
 				C2BBA5522451844B00E76F08 /* ViewModelBinding.swift in Sources */,
 				C2CC073524FFB43B000374BA /* NetworkDispatcher.swift in Sources */,
-				C2BBA55024517DB400E76F08 /* CategorizedBanchanViewModel.swift in Sources */,
+				C2BBA55024517DB400E76F08 /* SideDishViewModel.swift in Sources */,
 				C2764DA62458B2D300E9018A /* BanchanDetail.swift in Sources */,
 				C2CD5E78244EC65A000C41B8 /* RoundImageView.swift in Sources */,
 				C2CC073924FFC699000374BA /* NetworkTask.swift in Sources */,
-				C2E88278244EE65800E2CECA /* BanchanCell.swift in Sources */,
+				C2E88278244EE65800E2CECA /* SideDishCell.swift in Sources */,
 				C28003AD245018AA005D739E /* Request.swift in Sources */,
-				C2E8827A244EE82F00E2CECA /* BanchanHeaderView.swift in Sources */,
+				C2E8827A244EE82F00E2CECA /* SideDishHeaderView.swift in Sources */,
 				C2764DAA2458B38400E9018A /* ImageUseCase.swift in Sources */,
 				C2D8E103244F35EE00F4031F /* UIColorExtension.swift in Sources */,
 				C2D8E0FF244F301100F4031F /* BadgeView.swift in Sources */,
 				C2764DA22458AFAE00E9018A /* DescriptionView.swift in Sources */,
-				C28003B524503251005D739E /* BanchanUseCase.swift in Sources */,
+				C28003B524503251005D739E /* SideDishUseCase.swift in Sources */,
 				C2764DAE2458C64200E9018A /* ImageCollectionViewModel.swift in Sources */,
 				C2CD5E76244EB6D5000C41B8 /* BorderedLabel.swift in Sources */,
 				C2764D9E245899CB00E9018A /* Line.swift in Sources */,
@@ -418,7 +423,7 @@
 				C2764D9824581C7E00E9018A /* DefaultLocation.swift in Sources */,
 				C2969999244E956200CE191F /* SceneDelegate.swift in Sources */,
 				C28003A8245012A4005D739E /* SideDishResponse.swift in Sources */,
-				C2BBA54C24517C1300E76F08 /* Banchan.swift in Sources */,
+				C2BBA54C24517C1300E76F08 /* SideDish.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,16 +442,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R8M75S4BH;
-				INFOPLIST_FILE = BanchanTests/Info.plist;
+				INFOPLIST_FILE = SideDishTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.BanchanTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.SideDishTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SideDish.app/SideDish";
@@ -457,15 +464,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R8M75S4BH;
-				INFOPLIST_FILE = BanchanTests/Info.plist;
+				INFOPLIST_FILE = SideDishTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.BanchanTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seizze.SideDishTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
