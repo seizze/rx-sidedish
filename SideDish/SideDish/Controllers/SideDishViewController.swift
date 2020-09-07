@@ -13,7 +13,7 @@ class SideDishViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let viewModel = SideDishViewModel()
-    private let delegate = SidhDishDelegate()
+    private let delegate = SideDishDelegate()
     
     private let queue = DispatchQueue(label: "sidedish.networking")
     

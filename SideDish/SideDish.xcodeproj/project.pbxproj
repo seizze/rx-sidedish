@@ -51,7 +51,7 @@
 		C2E88278244EE65800E2CECA /* SideDishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88277244EE65800E2CECA /* SideDishCell.swift */; };
 		C2E8827A244EE82F00E2CECA /* SideDishHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88279244EE82F00E2CECA /* SideDishHeaderView.swift */; };
 		C2E88283244F05B600E2CECA /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88282244F05B600E2CECA /* Identifiable.swift */; };
-		C2E88286244F06D900E2CECA /* SidhDishDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88285244F06D900E2CECA /* SidhDishDelegate.swift */; };
+		C2E88286244F06D900E2CECA /* SideDishDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E88285244F06D900E2CECA /* SideDishDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,7 +108,7 @@
 		C2E88277244EE65800E2CECA /* SideDishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishCell.swift; sourceTree = "<group>"; };
 		C2E88279244EE82F00E2CECA /* SideDishHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishHeaderView.swift; sourceTree = "<group>"; };
 		C2E88282244F05B600E2CECA /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
-		C2E88285244F06D900E2CECA /* SidhDishDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidhDishDelegate.swift; sourceTree = "<group>"; };
+		C2E88285244F06D900E2CECA /* SideDishDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,7 +283,7 @@
 		C2E88284244F06BE00E2CECA /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				C2E88285244F06D900E2CECA /* SidhDishDelegate.swift */,
+				C2E88285244F06D900E2CECA /* SideDishDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -414,7 +414,7 @@
 			files = (
 				C2E88283244F05B600E2CECA /* Identifiable.swift in Sources */,
 				C2764DA82458B37B00E9018A /* BanchanDetailUseCase.swift in Sources */,
-				C2E88286244F06D900E2CECA /* SidhDishDelegate.swift in Sources */,
+				C2E88286244F06D900E2CECA /* SideDishDelegate.swift in Sources */,
 				C2764D9C2458599700E9018A /* SideDishDetailViewController.swift in Sources */,
 				C2764D9A2458597400E9018A /* SideDishViewController.swift in Sources */,
 				C2CC073C24FFF2EA000374BA /* CacheStorage.swift in Sources */,

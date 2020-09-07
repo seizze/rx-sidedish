@@ -1,5 +1,5 @@
 //
-//  SidhDishDelegate.swift
+//  SideDishDelegate.swift
 //  SideDish
 //
 //  Created by Chaewan Park on 2020/04/21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SidhDishDelegate: NSObject {
+class SideDishDelegate: NSObject {
     
     var didSelectRowAt: ((IndexPath) -> Void)?
     
@@ -20,7 +20,7 @@ class SidhDishDelegate: NSObject {
     ]
 }
 
-extension SidhDishDelegate: UITableViewDelegate {
+extension SideDishDelegate: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         didSelectRowAt?(indexPath)
