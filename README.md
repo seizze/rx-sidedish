@@ -34,7 +34,7 @@ Observable.of(["Lisbon", "Copenhagen", "London", "Madrid", "Vienna"])
 
 #### RxDataSource 리서치
 
-RxDataSource를 사용하면(Dependency 추가 필요) 여러 개의 섹션을 가진 테이블뷰에 데이터를 바인딩 가능하며, 데이터가 추가되거나 삭제되는 애니메이션도 자동으로 처리해준다.
+RxDataSource를 사용하면(Dependency 추가 필요) 여러 개의 섹션을 가진 테이블뷰에 데이터를 바인딩 가능하며, 데이터의 변경된 부분을 자동으로 알아내어 추가되거나 삭제되는 애니메이션도 알아서 처리해준다.
 
 [RxDataSource][RxDataSource]의 Example 프로젝트를 살펴본 결과,
 
