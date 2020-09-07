@@ -51,10 +51,12 @@ RxDataSource를 사용하면(Dependency 추가 필요) 여러 개의 섹션을 �
 
 ## References
 
+- [스터디 진행 스프레드시트][spreadsheet]
 - [RxSwift/UITableView+Rx.swift][uitableview+rx]
 - [RxTableViewReactiveArrayDataSource.swift][RxTableViewReactiveArrayDataSource]
 - [RxDataSource][RxDataSource]
 
+[spreadsheet]: https://docs.google.com/spreadsheets/d/1b7fGROHrgzJ80YjxaaAlRoj1XyLpZCFHk5xeK-yKW4I/edit#gid=0
 [UITableView+Rx]: https://github.com/ReactiveX/RxSwift/blob/master/RxCocoa/iOS/UITableView%2BRx.swift
 [RxDataSource]: https://github.com/RxSwiftCommunity/RxDataSources
 [RxTableViewReactiveArrayDataSource]: https://github.com/ReactiveX/RxSwift/blob/master/RxCocoa/iOS/DataSources/RxTableViewReactiveArrayDataSource.swift
