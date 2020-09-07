@@ -10,8 +10,6 @@ import UIKit
 
 class SideDishDelegate: NSObject {
     
-    var didSelectRowAt: ((IndexPath) -> Void)?
-    
     private let categories = [0: "든든한 반찬", 1: "국∙찌개", 2: "밑반찬"]
     private let titles = [
         0: "언제 먹어도 든든한 반찬",
@@ -21,10 +19,6 @@ class SideDishDelegate: NSObject {
 }
 
 extension SideDishDelegate: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelectRowAt?(indexPath)
-    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SideDishHeaderView.identifier) as? SideDishHeaderView else { return UIView() }
