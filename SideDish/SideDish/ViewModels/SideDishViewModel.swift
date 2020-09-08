@@ -7,61 +7,57 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-struct SideDishListChangeDetails {
+protocol SideDishViewModelBinding where Self: UITableViewDataSource {
     
-    let section: Int?
-    let overallData: [Int: [SideDish]]
+    var sectionUpdate: Observable<IndexSet> { get }
+    
+    func update(category: Int, sideDishes: [SideDish])
+    func sideDish(category: Int, index: Int) -> SideDish?
 }
 
-extension SideDishListChangeDetails {
+struct SideDishCollection {
     
-    init(with data: [Int: [SideDish]]) {
-        section = nil
-        overallData = data
+    var count: Int { sideDishes.count }
+    
+    let sideDishes: [SideDish]
+    
+    subscript(index: Int) -> SideDish {
+        return sideDishes[index]
     }
 }
 
-class SideDishViewModel: NSObject, ViewModelBinding {
+class SideDishViewModel: NSObject, SideDishViewModelBinding {
     
-    typealias Key = SideDishListChangeDetails?
+    private let sideDishCategoryUpdate = PublishRelay<IndexSet>()
     
-    private var change: Key = nil {
-        didSet { changeHandler(change) }
+    private var collections: [Int: SideDishCollection]
+    
+    var sectionUpdate: Observable<IndexSet>
+    
+    init(with collections: [Int: SideDishCollection] = [:]) {
+        self.collections = collections
+        self.sectionUpdate = sideDishCategoryUpdate.asObservable()
     }
     
-    private var changeHandler: (Key) -> Void
-    
-    init(with categorizedSideDish: Key = nil, handler: @escaping (Key) -> Void = { _ in }) {
-        self.changeHandler = handler
-        self.change = SideDishListChangeDetails(with: [Int: [SideDish]]())
-        changeHandler(categorizedSideDish)
-    }
-    
-    func update(categorizedSideDish: Key) {
-        self.change = categorizedSideDish
-    }
-    
-    func updateNotify(handler: @escaping (Key) -> Void) {
-        changeHandler = handler
-    }
-    
-    func append(key: Int, value: [SideDish]) {
-        guard var data = change?.overallData else { return }
-        data[key] = value
-        change = SideDishListChangeDetails(section: key, overallData: data)
+    func update(category: Int, sideDishes: [SideDish]) {
+        collections[category] = SideDishCollection(sideDishes: sideDishes)
+        sideDishCategoryUpdate.accept(IndexSet(category...category))
     }
     
     func sideDish(category: Int, index: Int) -> SideDish? {
-        return change?.overallData[category]?[index]
+        return collections[category]?[index]
     }
     
-    func count(of category: Int) -> Int {
-        return change?.overallData[category]?.count ?? 0
+    private func count(of section: Int) -> Int {
+        return collections[section]?.count ?? 0
     }
 }
 
 extension SideDishViewModel: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }

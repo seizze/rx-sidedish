@@ -13,7 +13,8 @@ class SideDishViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let viewModel = SideDishViewModel()
+    private var viewModel: SideDishViewModelBinding? = SideDishViewModel()
+    
     private let delegate = SideDishDelegate()
     
     private let queue = DispatchQueue(label: "sidedish.networking")
@@ -23,20 +24,24 @@ class SideDishViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureBinding()
+        configureBindings()
         configureTableView()
-        configureViewModel()
         
         fetchSideDishes()
     }
     
-    private func configureBinding() {
+    private func configureBindings() {
         tableView.rx.setDelegate(delegate)
             .disposed(by: disposeBag)
         
         tableView.rx.itemSelected
             .asDriver()
             .drive(onNext: { self.showSideDishDetails(of: $0) })
+            .disposed(by: disposeBag)
+        
+        viewModel?.sectionUpdate
+            .asDriver(onErrorJustReturn: IndexSet(0..<0))
+            .drive(onNext: { self.tableView.reloadSections($0, with: .automatic) })
             .disposed(by: disposeBag)
     }
     
@@ -50,28 +55,16 @@ class SideDishViewController: UIViewController {
         tableView.dataSource = viewModel
     }
     
-    private func configureViewModel() {
-        viewModel.updateNotify { change in
-            DispatchQueue.main.sync {
-                if let section = change?.section {
-                    self.tableView.reloadSections(IndexSet(section...section), with: .automatic)
-                } else {
-                    self.tableView.reloadData()
-                }
-            }
-        }
-    }
-    
     private func fetchSideDishes() {
         SideDishUseCase().fetchSideDishes { index, sideDishes in
             self.queue.sync {
-                self.viewModel.append(key: index, value: sideDishes)
+                self.viewModel?.update(category: index, sideDishes: sideDishes)
             }
         }
     }
     
     private func showSideDishDetails(of indexPath: IndexPath) -> Void {
-        guard let item = viewModel.sideDish(category: indexPath.section, index: indexPath.row) else { return }
+        guard let item = viewModel?.sideDish(category: indexPath.section, index: indexPath.row) else { return }
         let viewModel = SideDishDetailViewModel(with: item.detailHash)
         let viewController = SideDishDetailViewController.instantiate(title: item.title, viewModel: viewModel)
         navigationController?.show(viewController ?? UIViewController(), sender: nil)
