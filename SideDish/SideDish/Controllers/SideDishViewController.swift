@@ -13,7 +13,7 @@ class SideDishViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var viewModel: SideDishViewModelBinding? = SideDishViewModel()
+    private var viewModel: SideDishViewModelBinding?
     
     private let delegate = SideDishDelegate()
     
@@ -74,7 +74,12 @@ class SideDishViewController: UIViewController {
 
 extension SideDishViewController: Identifiable {
     
-    static func instantiate(from storyboard: StoryboardRouter = .sideDish) -> Self? {
-        return storyboard.load(viewControllerType: self)
+    static func instantiate(
+        from storyboard: StoryboardRouter = .sideDish,
+        viewModel: SideDishViewModelBinding
+    ) -> Self? {
+        guard let viewController = storyboard.load(viewControllerType: self) else { return nil }
+        viewController.viewModel = viewModel
+        return viewController
     }
 }
