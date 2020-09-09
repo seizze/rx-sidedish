@@ -40,8 +40,9 @@ class SideDishViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel?.sectionUpdate
-            .asDriver(onErrorJustReturn: IndexSet(0..<0))
-            .drive(onNext: { self.tableView.reloadSections($0, with: .automatic) })
+            .subscribeOn(SerialDispatchQueueScheduler(queue: queue, internalSerialQueueName: "update"))
+            .catchErrorJustReturn(IndexSet(0..<0))
+            .subscribe(onNext: { [weak self] in self?.reloadSynchronously(self?.tableView, at: $0) })
             .disposed(by: disposeBag)
     }
     
@@ -69,6 +70,10 @@ class SideDishViewController: UIViewController {
         let viewController = SideDishDetailViewController.instantiate(title: item.title, viewModel: viewModel)
         navigationController?.show(viewController ?? UIViewController(), sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    private func reloadSynchronously(_ tableView: UITableView?, at indexSet: IndexSet) {
+        DispatchQueue.main.sync { tableView?.reloadSections(indexSet, with: .automatic) }
     }
 }
 
