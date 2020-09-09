@@ -4,6 +4,16 @@
 
 <p align="center"><img width=500 src="demo.gif"></p>
 
+## 목차
+
+- [리팩토링 내용 정리](#리팩토링-내용-정리)
+    - [메인페이지 ViewModel Binding하기](#메인페이지-ViewModel-Binding하기)
+        - [RxCocoa TableView 리서치](#RxCocoa-TableView-리서치)
+        - [RxDataSource 리서치](#RxDataSource-리서치)
+        - [테이블뷰 섹션 업데이트 트러블슈팅](#테이블뷰-섹션-업데이트-트러블슈팅)
+        - [Peer Review](#Peer-Review)
+- [References](#References)
+
 ## 리팩토링 내용 정리
 
 ### 메인페이지 ViewModel Binding하기
