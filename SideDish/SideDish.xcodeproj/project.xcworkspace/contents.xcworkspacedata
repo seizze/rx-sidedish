@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/chaewan/Documents/Projects/rxswift/rx-sidedish/SideDish/SideDish.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

@@ -1,5 +1,5 @@
 //
-//  SidhDishDelegate.swift
+//  SideDishDelegate.swift
 //  SideDish
 //
 //  Created by Chaewan Park on 2020/04/21.
@@ -8,9 +8,7 @@
 
 import UIKit
 
-class SidhDishDelegate: NSObject {
-    
-    var didSelectRowAt: ((IndexPath) -> Void)?
+class SideDishDelegate: NSObject {
     
     private let categories = [0: "든든한 반찬", 1: "국∙찌개", 2: "밑반찬"]
     private let titles = [
@@ -20,11 +18,7 @@ class SidhDishDelegate: NSObject {
     ]
 }
 
-extension SidhDishDelegate: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelectRowAt?(indexPath)
-    }
+extension SideDishDelegate: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SideDishHeaderView.identifier) as? SideDishHeaderView else { return UIView() }

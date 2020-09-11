@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
         guard let windowScene = (scene as? UIWindowScene),
-            let viewController = SideDishViewController.instantiate() else { return }
+            let viewController = SideDishViewController.instantiate(viewModel: SideDishViewModel()) else { return }
         
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = UINavigationController(rootViewController: viewController)
