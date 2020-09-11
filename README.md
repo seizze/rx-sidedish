@@ -7,16 +7,15 @@
 ## 목차
 
 - [리팩토링 내용 정리](#리팩토링-내용-정리)
-    - [1주차 | 메인페이지 ViewModel Binding하기](#1주차--메인페이지-ViewModel-Binding하기)
+    - [메인페이지 ViewModel Output Binding하기](#1주차--메인페이지-ViewModel-Output-Binding하기)
         - [RxCocoa TableView 리서치](#RxCocoa-TableView-리서치)
         - [RxDataSource 리서치](#RxDataSource-리서치)
         - [테이블뷰 섹션 업데이트 트러블슈팅](#테이블뷰-섹션-업데이트-트러블슈팅)
-        - [Peer Review](#Peer-Review)
 - [References](#References)
 
 ## 리팩토링 내용 정리
 
-### 1주차 | 메인페이지 ViewModel Binding하기
+### 메인페이지 ViewModel Output Binding하기
 
 - 테이블뷰 섹션별로 업데이트 기능 리팩토링
 - 테이블뷰 셀 선택 시 화면 전환 기능 리팩토링
@@ -135,12 +134,6 @@ private func fetchSideDishes() {
 이렇게 하면 테이블뷰 reload 애니메이션이 끝날 때까지 백그라운드 스레드가 blocking되어 다음 뷰모델 변경작업을 수행하지 않는다.
 
 UI 바인딩 기능이지만 백그라운드 스레드에서 동작해야 해서 Driver를 사용하지 않았으므로 에러가 났을 때 스트림이 끊기지 않도록 에러 처리도 추가하였다.
-
-#### Peer Review
-
-
-
-
 
 ## References
 
