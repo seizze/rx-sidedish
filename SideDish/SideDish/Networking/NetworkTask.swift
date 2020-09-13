@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol NetworkTask {
     
@@ -19,26 +20,24 @@ protocol APITask: NetworkTask {
     
     var dispatcher: APIDispatcher { get }
     
-    func perform(_ request: Input, completion: @escaping (Result<Output, Error>) -> Void)
+    func perform(_ request: Input) -> Observable<Output>
 }
 
 extension APITask where Output: Decodable {
     
-    func perform(_ request: Input, completion: @escaping (Result<Output, Error>) -> Void) {
-        dispatcher.request(request) { result in
-            switch result {
-            case let .success(data): completion(self.decode(data))
-            case let .failure(error): completion(.failure(error))
-            }
-        }
+    func perform(_ request: Input) -> Observable<Output> {
+        return dispatcher.request(request).flatMap { self.decode($0) }
     }
-    
-    private func decode(_ data: Data) -> Result<Output, Error> {
-        do {
-            let response = try JSONDecoder().decode(Output.self, from: data)
-            return .success(response)
-        } catch {
-            return .failure(error)
+        
+    private func decode(_ data: Data) -> Observable<Output> {
+        return Observable.create { observer in
+            do {
+                let response = try JSONDecoder().decode(Output.self, from: data)
+                observer.onNext(response)
+            } catch {
+                observer.onError(error)
+            }
+            return Disposables.create()
         }
     }
 }

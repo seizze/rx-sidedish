@@ -9,5 +9,12 @@
 import Foundation
 
 struct SideDishResponse: Decodable {
+    
     let body: [SideDish]
+}
+
+struct TaggedSideDishes {
+    
+    let category: Int
+    let sideDishes: [SideDish]
 }

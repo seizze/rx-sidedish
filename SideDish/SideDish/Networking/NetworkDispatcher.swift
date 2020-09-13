@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 protocol NetworkDispatcher { }
 
 protocol APIDispatcher: NetworkDispatcher {
     
-    func request(_ request: Request, completion: @escaping (Result<Data, Error>) -> Void)
+    func request(_ request: Request) -> Observable<Data>
 }
 
 protocol DownloadDispatcher: NetworkDispatcher {
@@ -36,23 +38,11 @@ struct NetworkSession {
 
 extension NetworkSession: APIDispatcher {
     
-    func request(_ request: Request, completion: @escaping (Result<Data, Error>) -> Void) {
+    func request(_ request: Request) -> Observable<Data> {
         guard let request = request.urlRequest() else {
-            completion(.failure(NetworkSessionError.invalidURL))
-            return
+            return Observable.error(NetworkSessionError.invalidURL)
         }
-        session.dataTask(with: request) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            guard let data = data, let httpResponse = response as? HTTPURLResponse else { return }
-            if httpResponse.isValid() {
-                completion(.success(data))
-            } else {
-                completion(.failure(NetworkSessionError.notFound))
-            }
-        }.resume()
+        return session.rx.data(request: request)
     }
 }
 

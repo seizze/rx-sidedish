@@ -17,7 +17,7 @@ class SideDishViewController: UIViewController {
     
     private let delegate = SideDishDelegate()
     
-    private let queue = DispatchQueue(label: "sidedish.networking")
+    private let scheduler = SerialDispatchQueueScheduler(internalSerialQueueName: "sidedish.networking")
     
     private let disposeBag = DisposeBag()
     
@@ -40,7 +40,7 @@ class SideDishViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel?.sectionUpdate
-            .subscribeOn(SerialDispatchQueueScheduler(queue: queue, internalSerialQueueName: "update"))
+            .subscribeOn(scheduler)
             .catchErrorJustReturn(IndexSet(0..<0))
             .subscribe(onNext: { [weak self] in self?.reloadSynchronously(self?.tableView, at: $0) })
             .disposed(by: disposeBag)
@@ -57,11 +57,12 @@ class SideDishViewController: UIViewController {
     }
     
     private func fetchSideDishes() {
-        SideDishUseCase().fetchSideDishes { index, sideDishes in
-            self.queue.sync {
-                self.viewModel?.update(category: index, sideDishes: sideDishes)
-            }
-        }
+        SideDishUseCase().fetchSideDishes()
+            .subscribeOn(scheduler)
+            .subscribe(onNext: { [weak self] tagged in
+                self?.viewModel?.update(category: tagged.category, sideDishes: tagged.sideDishes)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func showSideDishDetails(of indexPath: IndexPath) -> Void {

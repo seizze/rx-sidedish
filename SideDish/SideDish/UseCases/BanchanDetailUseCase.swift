@@ -7,18 +7,13 @@
 //
 
 import Foundation
+import RxSwift
 
 struct BanchanDetailUseCase {
     
-    func fetchDetail(
-        of id: String,
-        completion: @escaping (BanchanDetail) -> Void
-    ) {
+    func fetchDetail(of id: String) -> Observable<BanchanDetail> {
         let request = SideDishDetailRequest(sideDishID: id)
-        SideDishDetailTask(dispatcher: NetworkSession(session: .shared)).perform(request) { result in
-            if case let .success(detail) = result {
-                completion(detail.data)
-            }
-        }
+        return SideDishDetailTask(dispatcher: NetworkSession(session: .shared)).perform(request)
+            .map { $0.data }
     }
 }

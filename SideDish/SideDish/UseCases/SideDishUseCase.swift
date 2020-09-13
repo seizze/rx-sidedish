@@ -7,16 +7,15 @@
 //
 
 import Foundation
+import RxSwift
 
 struct SideDishUseCase {
     
-    func fetchSideDishes(completion: @escaping (Int, [SideDish]) -> Void) {
-        SideDishRequest.allCases.enumerated().forEach { index, request in
-            SideDishTask(dispatcher: NetworkSession(session: .shared)).perform(request) { result in
-                if case let .success(response) = result {
-                    completion(index, response.body)
-                }
-            }
+    func fetchSideDishes() -> Observable<TaggedSideDishes> {
+        let tasks = SideDishRequest.allCases.map {
+            SideDishTask(dispatcher: NetworkSession(session: .shared)).perform($0)
         }
+        return Observable.indexedMerge(tasks)
+            .map { TaggedSideDishes(category: $0.index, sideDishes: $0.element.body) }
     }
 }

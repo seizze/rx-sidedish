@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class SideDishDetailViewController: UIViewController {
     
@@ -18,6 +19,8 @@ class SideDishDetailViewController: UIViewController {
     
     private var pagingViewModel = ImageCollectionViewModel()
     private var detailViewModel = ImageCollectionViewModel()
+    
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,9 +69,11 @@ class SideDishDetailViewController: UIViewController {
     
     private func fetchSideDishDetail() {
         guard let id = viewModel?.sideDishID else { return }
-        BanchanDetailUseCase().fetchDetail(of: id) {
-            self.viewModel?.update(banchanDetail: $0)
-        }
+        BanchanDetailUseCase().fetchDetail(of: id)
+            .subscribe(onNext: {
+                self.viewModel?.update(banchanDetail: $0)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
