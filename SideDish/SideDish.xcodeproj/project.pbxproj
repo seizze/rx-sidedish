@@ -17,7 +17,6 @@
 		C272A3F62503EC0100E7ABB6 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C272A3F52503EC0100E7ABB6 /* RxRelay */; };
 		C272A3F82503EC0100E7ABB6 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C272A3F72503EC0100E7ABB6 /* RxCocoa */; };
 		C272A3FA2503EC0100E7ABB6 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = C272A3F92503EC0100E7ABB6 /* RxBlocking */; };
-		C2764D9824581C7E00E9018A /* DefaultLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D9724581C7E00E9018A /* DefaultLocation.swift */; };
 		C2764D9A2458597400E9018A /* SideDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D992458597400E9018A /* SideDishViewController.swift */; };
 		C2764D9C2458599700E9018A /* SideDishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D9B2458599700E9018A /* SideDishDetailViewController.swift */; };
 		C2764D9E245899CB00E9018A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2764D9D245899CB00E9018A /* Line.swift */; };
@@ -72,7 +71,6 @@
 		C24751812500F2BD006CCFD2 /* SideDish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideDish.storyboard; sourceTree = "<group>"; };
 		C24751822500F2BD006CCFD2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C272A3EE25028D9500E7ABB6 /* SideDishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishTests.swift; sourceTree = "<group>"; };
-		C2764D9724581C7E00E9018A /* DefaultLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocation.swift; sourceTree = "<group>"; };
 		C2764D992458597400E9018A /* SideDishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDishViewController.swift; sourceTree = "<group>"; };
 		C2764D9B2458599700E9018A /* SideDishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishDetailViewController.swift; sourceTree = "<group>"; };
 		C2764D9D245899CB00E9018A /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 				C28003A7245012A4005D739E /* SideDishResponse.swift */,
 				C2764DA52458B2D300E9018A /* BanchanDetail.swift */,
 				C2764DA32458B1A900E9018A /* SideDishDetailResponse.swift */,
-				C2764D9724581C7E00E9018A /* DefaultLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -442,7 +439,6 @@
 				C24751802500E075006CCFD2 /* StoryboardRouter.swift in Sources */,
 				C2D8E105244F38A000F4031F /* BadgeLabel.swift in Sources */,
 				C2764DAC2458BDFA00E9018A /* SideDishDetailViewModel.swift in Sources */,
-				C2764D9824581C7E00E9018A /* DefaultLocation.swift in Sources */,
 				C2969999244E956200CE191F /* SceneDelegate.swift in Sources */,
 				C28003A8245012A4005D739E /* SideDishResponse.swift in Sources */,
 				C2BBA54C24517C1300E76F08 /* SideDish.swift in Sources */,
