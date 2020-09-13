@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C21FB30D250E67DB00887605 /* ObservableType+IndexedMerge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21FB30C250E67DB00887605 /* ObservableType+IndexedMerge.swift */; };
 		C247517E2500DF57006CCFD2 /* SideDishDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C247517D2500DF57006CCFD2 /* SideDishDetail.storyboard */; };
 		C24751802500E075006CCFD2 /* StoryboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247517F2500E075006CCFD2 /* StoryboardRouter.swift */; };
 		C24751832500F2BD006CCFD2 /* SideDish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24751812500F2BD006CCFD2 /* SideDish.storyboard */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C21FB30C250E67DB00887605 /* ObservableType+IndexedMerge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+IndexedMerge.swift"; sourceTree = "<group>"; };
 		C22EE1EF2451700B0046E27B /* SideDishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SideDishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22EE1F32451700B0046E27B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C247517D2500DF57006CCFD2 /* SideDishDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideDishDetail.storyboard; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				C2E88282244F05B600E2CECA /* Identifiable.swift */,
 				C2D8E102244F35EE00F4031F /* UIColorExtension.swift */,
 				C247517F2500E075006CCFD2 /* StoryboardRouter.swift */,
+				C21FB30C250E67DB00887605 /* ObservableType+IndexedMerge.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				C28003AD245018AA005D739E /* Request.swift in Sources */,
 				C2E8827A244EE82F00E2CECA /* SideDishHeaderView.swift in Sources */,
 				C2764DAA2458B38400E9018A /* ImageUseCase.swift in Sources */,
+				C21FB30D250E67DB00887605 /* ObservableType+IndexedMerge.swift in Sources */,
 				C2D8E103244F35EE00F4031F /* UIColorExtension.swift in Sources */,
 				C2D8E0FF244F301100F4031F /* BadgeView.swift in Sources */,
 				C2764DA22458AFAE00E9018A /* DescriptionView.swift in Sources */,

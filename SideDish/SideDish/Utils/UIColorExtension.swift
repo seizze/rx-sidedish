@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIColor {
+    
     static let pointMint = UIColor(named: "Point Mint")!
     static let badgePurple = UIColor(named: "Badge Purple")!
 }
