@@ -11,6 +11,8 @@
         - [RxCocoa TableView 리서치](#RxCocoa-TableView-리서치)
         - [RxDataSource 리서치](#RxDataSource-리서치)
         - [테이블뷰 섹션 업데이트 트러블슈팅](#테이블뷰-섹션-업데이트-트러블슈팅)
+    - [Networking Layer 리팩토링](#Networking-Layer-리팩토링)
+        - [Merge 연산자의 순서 처리 문제 해결](#Merge-연산자의-순서-처리-문제-해결)
 - [References](#References)
 
 ## 리팩토링 내용 정리
@@ -134,6 +136,53 @@ private func fetchSideDishes() {
 이렇게 하면 테이블뷰 reload 애니메이션이 끝날 때까지 백그라운드 스레드가 blocking되어 다음 뷰모델 변경작업을 수행하지 않는다.
 
 UI 바인딩 기능이지만 백그라운드 스레드에서 동작해야 해서 Driver를 사용하지 않았으므로 에러가 났을 때 스트림이 끊기지 않도록 에러 처리도 추가하였다.
+
+### Networking Layer 리팩토링
+
+- URLSession을 이용해 서버에 데이터를 요청하고 응답받는 APIDispatcher와, APIDispatcher를 이용해 받은 데이터를 디코딩하는 역할의 APITask를 callback 방식 대신 Observable을 생성해 리턴하는 방식으로 개선
+
+#### Merge 연산자의 순서 처리 문제 해결
+
+위 [테이블뷰 섹션 업데이트 트러블슈팅](#테이블뷰-섹션-업데이트-트러블슈팅)에 설명한 대로, 메인 페이지에서는 `main`, `soup`, `side` 3가지 API 요청 후 응답이 오면 모델을 변경하고 해당 테이블뷰 section을 reload해야 한다.
+
+![merge](diagrams/merge.png)
+
+하지만 위 그림과 같이 RxSwift의 merge 연산자를 사용할 경우, 방출된 데이터가 몇 번째 순서의 Observable로부터 온지 몰라서 네트워크 응답이 왔을 때 어떤 섹션에 들어가야 하는지 모르는 문제가 발생하였다.
+
+이 문제를 해결하기 위해 데이터 A가 도착했을 때 몇 번째 Observable로부터 방출되었다는 정보가 같이 와서 해당하는 테이블뷰의 섹션을 업데이트하는 게 좋겠다는 생각이 들었다.
+
+##### indexedMerge 커스텀 연산자 구현
+
+연산자에 입력되는 Observable의 순서대로 번호를 붙이고, 원본 데이터를 번호와 함께 리턴하는 연산자를 구현하여 문제를 해결하였다.
+
+```swift
+struct IndexedElement<E> {
+    
+    let index: Int
+    let element: E
+}
+
+extension ObservableType {
+    
+    static func indexedMerge<Payload>(
+        _ sources: [Observable<Payload>]
+    ) -> Observable<Element> where Element == IndexedElement<Payload> {
+        let observables = sources.enumerated().map { index, source in
+            source.map { IndexedElement(index: index, element: $0) }
+        }
+        return Observable.merge(observables)
+    }
+}
+```
+
+기존 RxSwift에 구현된 연산자들처럼 ObservableType을 확장하여 메서드를 추가하였다. `Payload`는 입력한 옵저버블들이 방출하는 원본 데이터를 의미하며, 리턴 타입은 `Payload`를 `IndexedElement` 타입으로 감싼 `IndexedElement<Payload>`이다.
+
+또한 기존 merge 연산자에 `IndexedElement<Payload>` 타입을 입력하여 사용하기 위해 
+`ObservableType`의 내부적으로 사용하는 `Element` 타입이 `IndexedElement<Payload>`와 같다고 명시하였다.
+
+이 메서드는 아래 그림처럼 연산자에 입력된 순서를 기록한 후 merge하여 돌려준다.
+
+![indexed-merge](diagrams/indexed-merge.png)
 
 ## References
 
