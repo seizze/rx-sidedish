@@ -184,15 +184,87 @@ extension ObservableType {
 
 ![indexed-merge](diagrams/indexed-merge.png)
 
+#### ObserverType, AnyObserver와 Bind 리서치
+
+뷰모델의 input을 AnyObserver 타입으로 바꾸고 외부에서 이 input에 바인딩하기 위해 관련 객체들을 분석하고 구현 내용을 살펴보았다.
+
+[ObserverType.swift][ObserverType]에 ObserverType 프로토콜이 구현되어 있다.
+
+```swift
+public protocol ObserverType {
+
+    associatedtype Element
+
+    func on(_ event: Event<Element>)
+    // ...
+}
+```
+
+`Event`는 next, error, completed를 case로 갖는 enum이다. 옵저버블들은 이 ObserverType을 따르는 Observer들의 메서드 `on`를 호출하면서 `Event`의 case와 함께 연관 값으로 Element, Error 등을 전달하는 방식으로 이벤트를 전달할 수 있다.
+
+[AnyObserver.swift][AnyObserver]에는 ObserverType을 따르는 AnyObserver가 구현되어 있다.
+
+```swift
+public struct AnyObserver<Element> : ObserverType {
+
+    public typealias EventHandler = (Event<Element>) -> Void
+
+    private let observer: EventHandler
+
+    public func on(_ event: Event<Element>) {
+        return self.observer(event)
+    }
+    // ...
+}
+```
+
+AnyObserver는 이벤트 핸들러 클로저를 갖고 있다가 `on`이 호출되면 이 클로저를 invoke하며 이벤트를 넘겨준다.
+
+[Observable+Bind.swift][Observable+Bind]는 RxCocoa에 포함되어 있으며, ObservableType을 확장한 bind 기능이 구현되어 있다.
+
+```swift
+extension ObservableType {
+
+    private func bind<Observer: ObserverType>(to observers: [Observer]) -> Disposable where Observer.Element == Element {
+        return self.subscribe { event in
+            observers.forEach { $0.on(event) }
+        }
+    // ...
+}
+```
+
+`bind`는 `subscribe`를 간소화하여 가독성을 좋게 사용하기 위한 extension이다. ObservableType을 확장했으므로 자기 자신의 subscribe를 호출하며 observer에게 이벤트를 전달한다.
+
+```swift
+viewModel.#Observable#
+    .subscribe(onNext: { item in
+        // viewModel.observer에 이벤트 전달
+    })
+    .disposed(by: disposeBag)
+
+viewModel.#Observable#
+    .bind(to: viewModel.#AnyObserver#)
+    .disposed(by: disposeBag)
+```
+
+위와 같이 코드를 간결하게 개선할 수 있다.
+
 ## References
 
 - [스터디 진행 스프레드시트][spreadsheet]
 - [RxSwift/UITableView+Rx.swift][uitableview+rx]
 - [RxTableViewReactiveArrayDataSource.swift][RxTableViewReactiveArrayDataSource]
 - [RxDataSources][RxDataSources]
+- [ObserverType.swift][ObserverType]
+- [AnyObserver.swift][AnyObserver]
+- [Observable+Bind.swift][Observable+Bind]
 
 [spreadsheet]: https://docs.google.com/spreadsheets/d/1b7fGROHrgzJ80YjxaaAlRoj1XyLpZCFHk5xeK-yKW4I/edit#gid=0
 [UITableView+Rx]: https://github.com/ReactiveX/RxSwift/blob/master/RxCocoa/iOS/UITableView%2BRx.swift
 [RxDataSources]: https://github.com/RxSwiftCommunity/RxDataSources
 [RxTableViewReactiveArrayDataSource]: https://github.com/ReactiveX/RxSwift/blob/master/RxCocoa/iOS/DataSources/RxTableViewReactiveArrayDataSource.swift
+[ObserverType]: https://github.com/ReactiveX/RxSwift/blob/main/RxSwift/ObserverType.swift
+[AnyObserver]: https://github.com/ReactiveX/RxSwift/blob/main/RxSwift/AnyObserver.swift
+[Observable+Bind]: https://github.com/ReactiveX/RxSwift/blob/main/RxCocoa/Common/Observable%2BBind.swift
+
 
