@@ -13,7 +13,7 @@ class SideDishViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var viewModel: SideDishViewModelBinding?
+    private var viewModel: SideDishViewModelBinding!
     
     private let delegate = SideDishDelegate()
     
@@ -39,7 +39,7 @@ class SideDishViewController: UIViewController {
             .drive(onNext: { self.showSideDishDetails(of: $0) })
             .disposed(by: disposeBag)
         
-        viewModel?.sectionUpdate
+        viewModel.sectionUpdate
             .subscribeOn(scheduler)
             .catchErrorJustReturn(IndexSet(0..<0))
             .subscribe(onNext: { [weak self] in self?.reloadSynchronously(self?.tableView, at: $0) })
@@ -59,14 +59,12 @@ class SideDishViewController: UIViewController {
     private func fetchSideDishes() {
         SideDishUseCase().fetchSideDishes()
             .subscribeOn(scheduler)
-            .subscribe(onNext: { [weak self] tagged in
-                self?.viewModel?.update(category: tagged.category, sideDishes: tagged.sideDishes)
-            })
+            .bind(to: viewModel.updateSideDish)
             .disposed(by: disposeBag)
     }
     
     private func showSideDishDetails(of indexPath: IndexPath) -> Void {
-        guard let item = viewModel?.sideDish(category: indexPath.section, index: indexPath.row) else { return }
+        guard let item = viewModel.sideDish(category: indexPath.section, index: indexPath.row) else { return }
         let viewModel = SideDishDetailViewModel(with: item.detailHash)
         let viewController = SideDishDetailViewController.instantiate(title: item.title, viewModel: viewModel)
         navigationController?.show(viewController ?? UIViewController(), sender: nil)

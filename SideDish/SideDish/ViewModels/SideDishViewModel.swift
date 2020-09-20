@@ -12,9 +12,10 @@ import RxCocoa
 
 protocol SideDishViewModelBinding where Self: UITableViewDataSource {
     
+    var updateSideDish: AnyObserver<TaggedSideDishes> { get }
+    
     var sectionUpdate: Observable<IndexSet> { get }
     
-    func update(category: Int, sideDishes: [SideDish])
     func sideDish(category: Int, index: Int) -> SideDish?
 }
 
@@ -31,24 +32,35 @@ struct SideDishCollection {
 
 class SideDishViewModel: NSObject, SideDishViewModelBinding {
     
+    private let disposeBag = DisposeBag()
+    
     private let sideDishCategoryUpdate = PublishRelay<IndexSet>()
     
-    private var collections: [Int: SideDishCollection]
+    private var collections = [Int: SideDishCollection]()
+    
+    var updateSideDish: AnyObserver<TaggedSideDishes>
     
     var sectionUpdate: Observable<IndexSet>
     
-    init(with collections: [Int: SideDishCollection] = [:]) {
-        self.collections = collections
-        self.sectionUpdate = sideDishCategoryUpdate.asObservable()
-    }
-    
-    func update(category: Int, sideDishes: [SideDish]) {
-        collections[category] = SideDishCollection(sideDishes: sideDishes)
-        sideDishCategoryUpdate.accept(IndexSet(category...category))
+    override init() {
+        let updating = PublishSubject<TaggedSideDishes>()
+        
+        updateSideDish = updating.asObserver()
+        sectionUpdate = sideDishCategoryUpdate.asObservable()
+        
+        super.init()
+        
+        updating.subscribe(onNext: { self.update(with: $0) })
+            .disposed(by: disposeBag)
     }
     
     func sideDish(category: Int, index: Int) -> SideDish? {
         return collections[category]?[index]
+    }
+    
+    private func update(with sideDishes: TaggedSideDishes) {
+        collections[sideDishes.category] = SideDishCollection(sideDishes: sideDishes.sideDishes)
+        sideDishCategoryUpdate.accept(IndexSet(sideDishes.category...sideDishes.category))
     }
     
     private func count(of section: Int) -> Int {
